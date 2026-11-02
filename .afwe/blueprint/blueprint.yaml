@@ -162,3 +162,34 @@ nodes:
     - bootstrapped
     status: uncharted
     origin: afwe:bootstrap
+  - id: editor
+    name: Editor
+    kind: module
+    purpose: CodeMirror 6 editor core, Vim, live preview, undo, focus, typewriter, and auto-pair.
+    status: planned
+    origin: llm:deepseek
+  - id: authorship
+    name: Authorship
+    kind: module
+    purpose: Manual, local authorship attribution using the open Markdown Annotations format.
+    status: planned
+    origin: llm:deepseek
+  - id: preview
+    name: Preview
+    kind: module
+    purpose: 'Per-platform file preview integrations: macOS Quick Look, Windows QuickLook, and Linux preview.'
+    status: planned
+    origin: llm:deepseek
+    children:
+    - id: preview-windows
+      name: Preview Windows
+      kind: module
+      purpose: Windows ql-win/QuickLook integration without a plugin.
+      status: planned
+      origin: llm:deepseek
+    - id: preview-linux
+      name: Preview Linux
+      kind: module
+      purpose: Linux cross-platform preview entry and optional native file-manager integration.
+      status: planned
+      origin: llm:deepseek
