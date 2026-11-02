@@ -157,6 +157,21 @@
 
           <label class="setting-row">
             <div class="setting-text">
+              <span class="setting-label">{$t('settings.editorEngine')}</span>
+              <span class="setting-hint">{$t('settings.editorEngineHint')}</span>
+            </div>
+            <select
+              class="setting-select"
+              value={$settings.editorEngine}
+              onchange={(e) => settings.update((s) => ({ ...s, editorEngine: e.currentTarget.value === "cm6" ? "cm6" : "legacy" }))}
+            >
+              <option value="legacy">{$t('settings.editorEngineClassic')}</option>
+              <option value="cm6">{$t('settings.editorEngineCm6')}</option>
+            </select>
+          </label>
+
+          <label class="setting-row">
+            <div class="setting-text">
               <span class="setting-label">{$t('settings.lineNumbers')}</span>
               <span class="setting-hint">{$t('settings.lineNumbersHint')}</span>
             </div>

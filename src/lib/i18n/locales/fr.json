@@ -211,7 +211,11 @@
     "aiLookup": "Recherche IA",
     "aiLookupHint": "Cliquez avec le bouton droit sur un texte sélectionné dans la visionneuse pour l'envoyer à un outil d'IA. Gérez les fournisseurs et les prompts enregistrés ci-dessous.",
     "language": "Langue",
-    "languageHint": "Langue d'affichage de l'interface."
+    "languageHint": "Langue d'affichage de l'interface.",
+    "editorEngine": "Moteur d’édition",
+    "editorEngineHint": "Essayez le nouvel éditeur CodeMirror. Le mode divisé utilise encore l’éditeur classique.",
+    "editorEngineClassic": "Éditeur classique",
+    "editorEngineCm6": "CodeMirror (aperçu)"
   },
   "toc": {
     "onThisPage": "Sur cette page",

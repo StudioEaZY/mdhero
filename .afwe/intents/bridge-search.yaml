@@ -1,0 +1,19 @@
+id: bridge-search
+title: Bridge find to CM6
+statement: Keep the existing find overlay and wire it to CM6 search so match count, next, previous, and highlighting still work.
+status: active
+origin: llm:deepseek
+attaches:
+  nodes:
+  - editor
+  files:
+  - src/lib/components/SearchOverlay.svelte
+from_turns:
+- t0004
+history:
+- turn: t0004
+  ts: 2026-11-02T22:59:41Z
+  statement: Keep the existing find overlay and wire it to CM6 search so match count, next, previous, and highlighting still work.
+created: 2026-11-02T22:59:41Z
+updated: 2026-11-02T22:59:41Z
+task: task-t0004

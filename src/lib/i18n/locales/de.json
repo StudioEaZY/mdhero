@@ -211,7 +211,11 @@
     "aiLookup": "KI-Nachschlage",
     "aiLookupHint": "Klicken Sie im Viewer mit der rechten Maustaste auf markierten Text, um ihn an ein KI-Tool zu senden. Verwalten Sie Anbieter und gespeicherte Prompts unten.",
     "language": "Sprache",
-    "languageHint": "Anzeigesprache der Oberfläche."
+    "languageHint": "Anzeigesprache der Oberfläche.",
+    "editorEngine": "Editor-Engine",
+    "editorEngineHint": "Probiere den neuen CodeMirror-Editor aus. Der Split-Modus verwendet vorerst den klassischen Editor.",
+    "editorEngineClassic": "Klassischer Editor",
+    "editorEngineCm6": "CodeMirror (Vorschau)"
   },
   "toc": {
     "onThisPage": "Auf dieser Seite",

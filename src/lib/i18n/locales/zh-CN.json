@@ -210,7 +210,11 @@
     "aiLookup": "AI 查询",
     "aiLookupHint": "在阅读器中右键选中文本，即可发送到 AI 工具。可在下方管理服务商和已保存的提示词。",
     "language": "语言",
-    "languageHint": "界面显示语言。"
+    "languageHint": "界面显示语言。",
+    "editorEngine": "编辑器引擎",
+    "editorEngineHint": "试用新的 CodeMirror 编辑器。分屏模式暂时仍使用经典编辑器。",
+    "editorEngineClassic": "经典编辑器",
+    "editorEngineCm6": "CodeMirror（预览）"
   },
   "toc": {
     "onThisPage": "本页目录",

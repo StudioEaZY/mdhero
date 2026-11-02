@@ -211,7 +211,11 @@
     "aiLookup": "Búsqueda IA",
     "aiLookupHint": "Haz clic derecho en el texto seleccionado del visor para enviarlo a una herramienta de IA. Gestiona proveedores y mensajes guardados abajo.",
     "language": "Idioma",
-    "languageHint": "Idioma de la interfaz."
+    "languageHint": "Idioma de la interfaz.",
+    "editorEngine": "Motor del editor",
+    "editorEngineHint": "Prueba el nuevo editor CodeMirror. El modo dividido todavía usa el editor clásico.",
+    "editorEngineClassic": "Editor clásico",
+    "editorEngineCm6": "CodeMirror (vista previa)"
   },
   "toc": {
     "onThisPage": "En esta página",

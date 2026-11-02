@@ -211,7 +211,11 @@
     "aiLookup": "AI Lookup",
     "aiLookupHint": "Right-click selected text in the viewer to send it to an AI tool. Manage providers and saved prompts below.",
     "language": "Language",
-    "languageHint": "Interface display language."
+    "languageHint": "Interface display language.",
+    "editorEngine": "Editor engine",
+    "editorEngineHint": "Try the new CodeMirror editor. Split mode still uses the classic editor for now.",
+    "editorEngineClassic": "Classic editor",
+    "editorEngineCm6": "CodeMirror (preview)"
   },
   "toc": {
     "onThisPage": "On this page",

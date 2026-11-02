@@ -1,0 +1,372 @@
+id: t0004
+turn_hash: turn-fe8e2c73839e
+alias: t0004
+epoch_id: epoch-7ca991
+token_hash: f8c87de6216cc8730a1d5363aabfd7e4ee8406703b4d0863c55ffa35e581e317
+claims:
+- path: src/routes/+page.svelte
+  base_blob: 8cf5390ac7b07f9239046f2351b88760edb511a6
+  node: routes
+  claimed_at: 2026-11-02T22:59:31Z
+- path: src/lib/stores/settings.ts
+  base_blob: d63eb8a021c3299e6bbd1d10fb7f7545b3d7a5f1
+  node: stores
+  claimed_at: 2026-11-02T22:59:32Z
+- path: src/lib/components/SettingsDialog.svelte
+  base_blob: 163ed8b9144f5bdc91494b228dbef7cb971c64f2
+  node: components
+  claimed_at: 2026-11-02T22:59:32Z
+- path: src/lib/components/SearchOverlay.svelte
+  base_blob: 42a1c5b8f64572c4fb720a90131719ae624a306a
+  node: components
+  claimed_at: 2026-11-02T22:59:32Z
+- path: package.json
+  base_blob: db96a03b58e80f8c54249954b1b7acd1a1dc46a8
+  claimed_at: 2026-11-02T22:59:32Z
+- path: pnpm-lock.yaml
+  base_blob: 910e3137ad5a1da74c422a8b29306ab40e9eb7aa
+  claimed_at: 2026-11-02T22:59:32Z
+- path: src/lib/i18n/locales/en.json
+  base_blob: b1875029de42be8719012d5187a43d0ad2c322a2
+  node: i18n
+  claimed_at: 2026-11-02T22:59:32Z
+- path: src/lib/i18n/locales/de.json
+  base_blob: 576752079dcff223e83a4093dd1c00d65addf40e
+  node: i18n
+  claimed_at: 2026-11-02T22:59:33Z
+- path: src/lib/i18n/locales/es.json
+  base_blob: 5250aae387dda879801ec99bf7d376b0cdabe5b8
+  node: i18n
+  claimed_at: 2026-11-02T22:59:33Z
+- path: src/lib/i18n/locales/fr.json
+  base_blob: 2f4ebf2c0bf78bfb0027a0004cd0ad7faf20bec2
+  node: i18n
+  claimed_at: 2026-11-02T22:59:33Z
+- path: src/lib/i18n/locales/zh-CN.json
+  base_blob: 597b41b8479706531479e1a864567b0722b67a48
+  node: i18n
+  claimed_at: 2026-11-02T22:59:33Z
+base_head: e7ce432308c5536fc7e8d437e14a22067b82d332
+last_activity: 2026-11-02T22:59:31Z
+ts: 2026-11-02T22:59:31Z
+origin: llm:deepseek
+agent: deepseek
+prompt: Add the CodeMirror 6 editor parity preview on the dev branch without removing the classic editor.
+prompt_hash: 1b117941102008a5
+task: task-t0004
+targets:
+- editor
+scope:
+  nodes:
+  - editor
+  - preview
+intents:
+- id: add-cm6-preview
+  action: create
+  targets:
+  - editor
+  - src/routes/+page.svelte
+  - src/lib/stores/settings.ts
+  - src/lib/components/SettingsDialog.svelte
+  title: Add CM6 editor preview
+  statement: Add a full-featured CodeMirror 6 editor path behind a setting, while preserving the classic textarea editor as the fallback.
+- id: bridge-search
+  action: create
+  targets:
+  - editor
+  - src/lib/components/SearchOverlay.svelte
+  title: Bridge find to CM6
+  statement: Keep the existing find overlay and wire it to CM6 search so match count, next, previous, and highlighting still work.
+status: ready
+touched:
+  nodes:
+  - components
+  - i18n
+  - routes
+  - src-tauri
+  - stores
+  files:
+  - .afwe/intents/add-cm6-preview.yaml
+  - .afwe/intents/bridge-search.yaml
+  - .github/FUNDING.yml
+  - .github/ISSUE_TEMPLATE/bug_report.yml
+  - .github/ISSUE_TEMPLATE/config.yml
+  - .github/ISSUE_TEMPLATE/feature_request.yml
+  - .github/pull_request_template.md
+  - .github/workflows/afwe-gate.yml
+  - .github/workflows/build.yml
+  - .gitignore
+  - .vscode/extensions.json
+  - .vscode/settings.json
+  - package.json
+  - pnpm-lock.yaml
+  - src-tauri/.gitignore
+  - src/lib/components/CodeMirrorEditor.svelte
+  - src/lib/components/SearchOverlay.svelte
+  - src/lib/components/SettingsDialog.svelte
+  - src/lib/editor/cm6.ts
+  - src/lib/editor/search-bridge.ts
+  - src/lib/editor/sessions.ts
+  - src/lib/i18n/locales/de.json
+  - src/lib/i18n/locales/en.json
+  - src/lib/i18n/locales/es.json
+  - src/lib/i18n/locales/fr.json
+  - src/lib/i18n/locales/zh-CN.json
+  - src/lib/stores/settings.ts
+  - src/routes/+page.svelte
+  symbols:
+  - src/lib/editor/cm6.ts::ChangeHandler
+  - src/lib/editor/cm6.ts::DARK
+  - src/lib/editor/cm6.ts::DocChangeHandler
+  - src/lib/editor/cm6.ts::EditorSearchController
+  - src/lib/editor/cm6.ts::EditorSearchController.applyQuery
+  - src/lib/editor/cm6.ts::EditorSearchController.clear
+  - src/lib/editor/cm6.ts::EditorSearchController.constructor
+  - src/lib/editor/cm6.ts::EditorSearchController.next
+  - src/lib/editor/cm6.ts::EditorSearchController.onDocChanged
+  - src/lib/editor/cm6.ts::EditorSearchController.prev
+  - src/lib/editor/cm6.ts::EditorSearchController.select
+  - src/lib/editor/cm6.ts::EditorSearchController.setQuery
+  - src/lib/editor/cm6.ts::LIGHT
+  - src/lib/editor/cm6.ts::Palette
+  - src/lib/editor/cm6.ts::appearanceCompartment
+  - src/lib/editor/cm6.ts::appearanceExtension
+  - src/lib/editor/cm6.ts::changeHandler
+  - src/lib/editor/cm6.ts::createEditorState
+  - src/lib/editor/cm6.ts::docChangeHandler
+  - src/lib/editor/cm6.ts::fontCompartment
+  - src/lib/editor/cm6.ts::fontExtension
+  - src/lib/editor/cm6.ts::highlightStyle
+  - src/lib/editor/cm6.ts::lineNumberExtension
+  - src/lib/editor/cm6.ts::lineNumbersCompartment
+  - src/lib/editor/cm6.ts::palette
+  - src/lib/editor/cm6.ts::setEditorHandlers
+  - src/lib/editor/cm6.ts::themeSpec
+  - src/lib/editor/search-bridge.ts::EditorSearchController
+  - src/lib/editor/search-bridge.ts::current
+  - src/lib/editor/search-bridge.ts::editorSearch
+  - src/lib/editor/search-bridge.ts::editorSearch.clear
+  - src/lib/editor/search-bridge.ts::editorSearch.isActive
+  - src/lib/editor/search-bridge.ts::editorSearch.next
+  - src/lib/editor/search-bridge.ts::editorSearch.prev
+  - src/lib/editor/search-bridge.ts::editorSearch.register
+  - src/lib/editor/search-bridge.ts::editorSearch.setQuery
+  - src/lib/editor/search-bridge.ts::editorSearch.unregister
+  - src/lib/editor/sessions.ts::getSession
+  - src/lib/editor/sessions.ts::putSession
+  - src/lib/editor/sessions.ts::sessions
+  - src/lib/stores/settings.ts::ReaderSettings
+  - src/lib/stores/settings.ts::loadSettings
+implements:
+  components:
+  - src/lib/components/AILookupSettings.svelte
+  - src/lib/components/AboutDialog.svelte
+  - src/lib/components/CodeMirrorEditor.svelte
+  - src/lib/components/CustomPromptModal.svelte
+  - src/lib/components/DropZone.svelte
+  - src/lib/components/Editor.svelte
+  - src/lib/components/EmptyState.svelte
+  - src/lib/components/FrontmatterBar.svelte
+  - src/lib/components/ImageLightbox.svelte
+  - src/lib/components/LanguageDialog.svelte
+  - src/lib/components/MarkdownRenderer.svelte
+  - src/lib/components/OpenDialog.svelte
+  - src/lib/components/PanelResizer.svelte
+  - src/lib/components/PasteModal.svelte
+  - src/lib/components/PresentationView.svelte
+  - src/lib/components/ProgressBar.svelte
+  - src/lib/components/ReaderControls.svelte
+  - src/lib/components/ScrollToTop.svelte
+  - src/lib/components/SearchOverlay.svelte
+  - src/lib/components/SettingsDialog.svelte
+  - src/lib/components/StatusBar.svelte
+  - src/lib/components/TabBar.svelte
+  - src/lib/components/TableOfContents.svelte
+  - src/lib/components/Toast.svelte
+  - src/lib/components/Toolbar.svelte
+  - src/lib/components/UpdateBanner.svelte
+  - src/lib/components/UpdateToast.svelte
+  i18n:
+  - src/lib/i18n/index.ts
+  - src/lib/i18n/locales/de.json
+  - src/lib/i18n/locales/en.json
+  - src/lib/i18n/locales/es.json
+  - src/lib/i18n/locales/fr.json
+  - src/lib/i18n/locales/zh-CN.json
+  - src/lib/i18n/types.ts
+  quicklook:
+  - quicklook/Info.plist
+  - quicklook/MDHeroQuickLook.entitlements
+  - quicklook/Preview.swift
+  - quicklook/README.md
+  - quicklook/build-appex.sh
+  renderer:
+  - src/lib/renderer/mermaid-sanitize.ts
+  - src/lib/renderer/pipeline.ts
+  - src/lib/renderer/slides.ts
+  routes:
+  - src/routes/+layout.svelte
+  - src/routes/+layout.ts
+  - src/routes/+page.svelte
+  scripts:
+  - scripts/build-quicklook.mjs
+  src-tauri:
+  - src-tauri/.gitignore
+  - src-tauri/Cargo.toml
+  - src-tauri/Info.plist
+  - src-tauri/build.rs
+  - src-tauri/capabilities/default.json
+  - src-tauri/capabilities/desktop.json
+  - src-tauri/icons/android/mipmap-anydpi-v26/ic_launcher.xml
+  - src-tauri/icons/android/values/ic_launcher_background.xml
+  - src-tauri/src/commands.rs
+  - src-tauri/src/lib.rs
+  - src-tauri/src/main.rs
+  - src-tauri/src/menu.rs
+  - src-tauri/src/single_window.rs
+  - src-tauri/src/watcher.rs
+  - src-tauri/tauri.conf.json
+  - src-tauri/tauri.quicklook.conf.json
+  - src-tauri/tauri.release.conf.json
+  - src-tauri/tests/menu_window.rs
+  stores:
+  - src/lib/stores/aiLookup.ts
+  - src/lib/stores/autoUpdate.ts
+  - src/lib/stores/document.ts
+  - src/lib/stores/pinned.ts
+  - src/lib/stores/readingProgress.ts
+  - src/lib/stores/recents.ts
+  - src/lib/stores/search.ts
+  - src/lib/stores/settings.ts
+  - src/lib/stores/tabs.ts
+  - src/lib/stores/theme.ts
+  - src/lib/stores/toast.ts
+  - src/lib/stores/toc.ts
+  - src/lib/stores/updater.ts
+  tauri:
+  - src/lib/tauri/files.ts
+  - src/lib/tauri/session.ts
+  - src/lib/tauri/watcher.ts
+  tests:
+  - src-tauri/tests/menu_window.rs
+  tests-2:
+  - tests/fixtures/complete-test.md
+  - tests/fixtures/rtl-test/multi-lang.md
+  - tests/fixtures/sample.md
+  - tests/fixtures/scroll-sync-wrap.md
+  - tests/unit/allow-assets.test.ts
+  - tests/unit/code-block-wrap.test.ts
+  - tests/unit/copy-file-name.test.ts
+  - tests/unit/delayed-call.test.ts
+  - tests/unit/dompurify-pin.test.ts
+  - tests/unit/editor-per-tab.test.ts
+  - tests/unit/hljs-dark-coverage.test.ts
+  - tests/unit/i18n.test.ts
+  - tests/unit/line-gutter.test.ts
+  - tests/unit/line-patch.test.ts
+  - tests/unit/markdown-highlight-budget.test.ts
+  - tests/unit/markdown-highlight-escape.test.ts
+  - tests/unit/markdown-highlight.test.ts
+  - tests/unit/opener-capability.test.ts
+  - tests/unit/path.test.ts
+  - tests/unit/plaintext-highlight.test.ts
+  - tests/unit/platform.test.ts
+  - tests/unit/quicklook-bundle.test.ts
+  - tests/unit/reload-file.test.ts
+  - tests/unit/rtl-direction.test.ts
+  - tests/unit/session-restore.test.ts
+  - tests/unit/settings-booleans.test.ts
+  - tests/unit/side-tabs.test.ts
+  - tests/unit/slides.test.ts
+  - tests/unit/split-sync.test.ts
+  - tests/unit/tabs-disk-changed.test.ts
+  - tests/unit/tabs-session.test.ts
+  - tests/unit/text-search.test.ts
+  - tests/unit/toc-width.test.ts
+  - tests/unit/unsaved-prompt.test.ts
+  - tests/unit/update-check.test.ts
+  - tests/unit/utf8-bom.test.ts
+  - tests/unit/version-sync.test.ts
+  - tests/unit/watcher.test.ts
+  - tests/unit/wheel-zoom.test.ts
+  types:
+  - src/types/markdown-it-plugins.d.ts
+  unit:
+  - tests/unit/allow-assets.test.ts
+  - tests/unit/code-block-wrap.test.ts
+  - tests/unit/copy-file-name.test.ts
+  - tests/unit/delayed-call.test.ts
+  - tests/unit/dompurify-pin.test.ts
+  - tests/unit/editor-per-tab.test.ts
+  - tests/unit/hljs-dark-coverage.test.ts
+  - tests/unit/i18n.test.ts
+  - tests/unit/line-gutter.test.ts
+  - tests/unit/line-patch.test.ts
+  - tests/unit/markdown-highlight-budget.test.ts
+  - tests/unit/markdown-highlight-escape.test.ts
+  - tests/unit/markdown-highlight.test.ts
+  - tests/unit/opener-capability.test.ts
+  - tests/unit/path.test.ts
+  - tests/unit/plaintext-highlight.test.ts
+  - tests/unit/platform.test.ts
+  - tests/unit/quicklook-bundle.test.ts
+  - tests/unit/reload-file.test.ts
+  - tests/unit/rtl-direction.test.ts
+  - tests/unit/session-restore.test.ts
+  - tests/unit/settings-booleans.test.ts
+  - tests/unit/side-tabs.test.ts
+  - tests/unit/slides.test.ts
+  - tests/unit/split-sync.test.ts
+  - tests/unit/tabs-disk-changed.test.ts
+  - tests/unit/tabs-session.test.ts
+  - tests/unit/text-search.test.ts
+  - tests/unit/toc-width.test.ts
+  - tests/unit/unsaved-prompt.test.ts
+  - tests/unit/update-check.test.ts
+  - tests/unit/utf8-bom.test.ts
+  - tests/unit/version-sync.test.ts
+  - tests/unit/watcher.test.ts
+  - tests/unit/wheel-zoom.test.ts
+  utils:
+  - src/lib/utils/clipboard.ts
+  - src/lib/utils/delayed-call.ts
+  - src/lib/utils/layout.ts
+  - src/lib/utils/line-gutter.ts
+  - src/lib/utils/line-patch.ts
+  - src/lib/utils/llm.ts
+  - src/lib/utils/markdown-highlight.ts
+  - src/lib/utils/path.ts
+  - src/lib/utils/platform.ts
+  - src/lib/utils/scroll-sync.ts
+  - src/lib/utils/split-sync.ts
+  - src/lib/utils/text-search.ts
+  - src/lib/utils/unsaved-prompt.ts
+  - src/lib/utils/url.ts
+  - src/lib/utils/wheel-zoom.ts
+checks:
+- id: afwe-verify
+  title: constraints and active guardrails
+  trust: deterministic
+  authored_by: afwe
+  passed: true
+  blocking: true
+- id: project-tests
+  title: pnpm test && pnpm check
+  trust: deterministic
+  authored_by: human
+  passed: true
+  blocking: true
+  ran_against: working-tree
+strength: deterministic
+confidence: 0.81
+confidence_parts:
+  clarity: 1.0
+  mapping: 0.81
+  pins: 1.0
+  verification: 1.0
+gate:
+  decision: ready
+footer_shown: false
+summary: Add the opt-in CodeMirror 6 editor preview with per-tab history, line numbers, Markdown highlighting, and find integration; keep the classic editor and split mode intact.
+turn_token: afwe_tok_1fe6b10b643c1ad6ed4de32b7a1b755f
+session_id: sess-0ad453

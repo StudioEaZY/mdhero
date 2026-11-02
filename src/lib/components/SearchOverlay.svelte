@@ -8,6 +8,7 @@
   } from "$lib/stores/search";
   import { cycleIndex } from "$lib/utils/text-search";
   import { t } from "$lib/i18n";
+  import { editorSearch } from "$lib/editor/search-bridge";
 
   let { visible = $bindable(false) }: { visible: boolean } = $props();
 
@@ -32,6 +33,10 @@
   }
 
   function doSearch() {
+    if (editorSearch.isActive()) {
+      editorSearch.setQuery($searchQuery);
+      return;
+    }
     const target = getViewTarget();
     if (!target) return; // edit mode: the Editor backdrop owns highlighting
 
@@ -74,16 +79,19 @@
   }
 
   function nextMatch() {
+    if (editorSearch.next()) return;
     if ($searchTotal === 0) return;
     searchActiveIndex.set(cycleIndex($searchActiveIndex, $searchTotal, 1));
   }
 
   function prevMatch() {
+    if (editorSearch.prev()) return;
     if ($searchTotal === 0) return;
     searchActiveIndex.set(cycleIndex($searchActiveIndex, $searchTotal, -1));
   }
 
   function close() {
+    editorSearch.clear();
     visible = false;
     clearMarks();
     resetSearch();
@@ -129,6 +137,7 @@
   // mode only; the Editor handles scrolling its own active match).
   $effect(() => {
     const idx = $searchActiveIndex;
+    if (editorSearch.isActive()) return;
     if (visible && getViewTarget()) scrollToViewMatch(idx);
   });
 </script>

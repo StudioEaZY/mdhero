@@ -48,6 +48,7 @@
   import UpdateToast from "$lib/components/UpdateToast.svelte";
   import Toast from "$lib/components/Toast.svelte";
   import Editor from "$lib/components/Editor.svelte";
+  import CodeMirrorEditor from "$lib/components/CodeMirrorEditor.svelte";
   import PresentationView from "$lib/components/PresentationView.svelte";
   import { updateScrollPercent } from "$lib/stores/recents";
   import { checkForUpdates, updateAvailable, updateDismissed, checkInFlight } from "$lib/stores/updater";
@@ -1275,9 +1276,9 @@
         />
       </main>
     {:else if activeTab?.isEditing}
-      <!-- One Editor per tab, as in Split above (#129). -->
-      {#key activeTab.id}
-        <Editor
+      {#if $settings.editorEngine === "cm6"}
+        <CodeMirrorEditor
+          tabId={activeTab.id}
           value={activeTab.editContent}
           onChange={(v) => tabStore.updateEditContent(activeTab!.id, v)}
           fontSize={$settings.fontSize}
@@ -1286,7 +1287,20 @@
           showLineNumbers={$settings.showLineNumbers}
           syntaxHighlighting={$settings.syntaxHighlighting}
         />
-      {/key}
+      {:else}
+        <!-- One Editor per tab, as in Split above (#129). -->
+        {#key activeTab.id}
+          <Editor
+            value={activeTab.editContent}
+            onChange={(v) => tabStore.updateEditContent(activeTab!.id, v)}
+            fontSize={$settings.fontSize}
+            lineHeight={$settings.lineHeight}
+            maxWidth={contentMaxWidth}
+            showLineNumbers={$settings.showLineNumbers}
+            syntaxHighlighting={$settings.syntaxHighlighting}
+          />
+        {/key}
+      {/if}
     {:else if rawMode}
       <main class="content-main" class:toc-spaced={$tocVisible && $tocEntries.length > 0}>
         <div

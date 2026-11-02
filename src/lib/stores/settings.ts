@@ -7,6 +7,8 @@ export interface ReaderSettings {
   maxWidth: number;
   widthMode: "comfortable" | "wide";
   closeOnEscape: boolean;
+  /** Which editor engine renders editable Markdown: the classic textarea or CM6. */
+  editorEngine: "legacy" | "cm6";
   showLineNumbers: boolean;
   /** Color the Markdown syntax in the editor (#73). */
   syntaxHighlighting: boolean;
@@ -87,6 +89,7 @@ function loadSettings(): ReaderSettings {
     maxWidth: DEFAULT_MAX_WIDTH,
     widthMode: "comfortable",
     closeOnEscape: true,
+    editorEngine: "legacy",
     showLineNumbers: true,
     syntaxHighlighting: true,
     autoPresentMarp: true,
@@ -111,6 +114,7 @@ function loadSettings(): ReaderSettings {
         widthMode: parsed.widthMode === "wide" ? "wide" : "comfortable",
         tocWidth: clampTocWidth(parsed.tocWidth),
         closeOnEscape: storedBoolean(parsed.closeOnEscape, defaults.closeOnEscape),
+        editorEngine: parsed.editorEngine === "cm6" ? "cm6" : "legacy",
         showLineNumbers: storedBoolean(parsed.showLineNumbers, defaults.showLineNumbers),
         syntaxHighlighting: storedBoolean(parsed.syntaxHighlighting, defaults.syntaxHighlighting),
         autoPresentMarp: storedBoolean(parsed.autoPresentMarp, defaults.autoPresentMarp),
