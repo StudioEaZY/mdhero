@@ -24,3 +24,7 @@
 {"ts":"2026-11-02T22:23:36Z","origin":"llm:deepseek","kind":"add_node","summary":"Added node Preview Linux under preview","details":{"id":"preview-linux"}}
 {"ts":"2026-11-02T22:23:46Z","origin":"human:sync","kind":"sync","summary":"Synced 154 files; applied 0, proposed 6, uncertain 0"}
 {"ts":"2026-11-02T22:24:56Z","origin":"llm:deepseek","kind":"turn_ready","summary":"t0002 ready: Map planned editor, authorship, and per-platform preview modules in the AFWE blueprint. (100%)","details":{"turn":"t0002","reasons":[],"checkgen":[]}}
+{"ts":"2026-11-02T22:26:11Z","origin":"human","kind":"gate","summary":"gate passed: 0 failure(s)"}
+{"ts":"2026-11-02T22:29:56Z","origin":"llm:deepseek","kind":"turn_begin","summary":"t0003 begun: Make the AFWE CI gate install the frontend dependencies required by the project test comma…","details":{"turn":"t0003","hash":"turn-f894a94483a8","task":"task-t0003","nodes":[]}}
+{"ts":"2026-11-02T22:30:11Z","origin":"llm:deepseek","kind":"turn_assume","summary":"t0003: 1 intent(s), 0 assumption(s) registered","details":{"turn":"t0003"}}
+{"ts":"2026-11-02T22:31:37Z","origin":"llm:deepseek","kind":"turn_ready","summary":"t0003 ready: Install Node, pnpm, and locked frontend dependencies in the AFWE CI gate before running project tests. (100%)","details":{"turn":"t0003","reasons":[],"checkgen":[]}}

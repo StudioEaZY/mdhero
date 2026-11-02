@@ -1,0 +1,17 @@
+id: fix-afwe-ci
+title: Install frontend dependencies in the AFWE gate
+statement: The AFWE gate runs pnpm test and pnpm check; the workflow must install Node, pnpm, and the locked frontend dependencies first.
+status: active
+origin: llm:deepseek
+attaches:
+  nodes:
+  - mdhero
+from_turns:
+- t0003
+history:
+- turn: t0003
+  ts: 2026-11-02T22:30:11Z
+  statement: The AFWE gate runs pnpm test and pnpm check; the workflow must install Node, pnpm, and the locked frontend dependencies first.
+created: 2026-11-02T22:30:11Z
+updated: 2026-11-02T22:30:11Z
+task: task-t0003
