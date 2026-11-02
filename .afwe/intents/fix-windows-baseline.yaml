@@ -1,0 +1,18 @@
+id: fix-windows-baseline
+title: Fix Windows baseline tests
+statement: 'Make the baseline test suite pass on Windows without changing behavior: remove the import-breaking shebang and accept CRLF in Cargo.lock version detection.'
+status: active
+origin: llm:deepseek
+attaches:
+  files:
+  - scripts/build-quicklook.mjs
+  - tests/unit/version-sync.test.ts
+from_turns:
+- t0001
+history:
+- turn: t0001
+  ts: 2026-11-02T22:20:39Z
+  statement: 'Make the baseline test suite pass on Windows without changing behavior: remove the import-breaking shebang and accept CRLF in Cargo.lock version detection.'
+created: 2026-11-02T22:20:39Z
+updated: 2026-11-02T22:20:39Z
+task: task-t0001

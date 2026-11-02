@@ -1,0 +1,17 @@
+id: bootstrap-afwe
+title: Bootstrap the AFWE intent layer
+statement: Install the AFWE ReBorn intent layer, architecture map, and CI gate for MDHero.
+status: active
+origin: llm:deepseek
+attaches:
+  nodes:
+  - mdhero
+from_turns:
+- t0001
+history:
+- turn: t0001
+  ts: 2026-11-02T22:20:39Z
+  statement: Install the AFWE ReBorn intent layer, architecture map, and CI gate for MDHero.
+created: 2026-11-02T22:20:39Z
+updated: 2026-11-02T22:20:39Z
+task: task-t0001

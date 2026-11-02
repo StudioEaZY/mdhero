@@ -1,0 +1,164 @@
+nodes:
+- id: mdhero
+  name: mdhero
+  kind: product
+  purpose: Root of the architecture. Everything the project is lives beneath this node.
+  status: active
+  origin: human
+  children:
+  - id: quicklook
+    name: Quicklook
+    kind: module
+    description: Bootstrapped from `quicklook/` (2 code files). Review and give it a purpose.
+    implements:
+      files:
+      - quicklook/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: scripts
+    name: Scripts
+    kind: module
+    description: Bootstrapped from `scripts/` (1 code files). Review and give it a purpose.
+    implements:
+      files:
+      - scripts/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: routes
+    name: Routes
+    kind: module
+    description: Bootstrapped from `src/routes/` (3 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src/routes/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: types
+    name: Types
+    kind: module
+    description: Bootstrapped from `src/types/` (1 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src/types/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: src-tauri
+    name: Src Tauri
+    kind: subsystem
+    description: Bootstrapped from `src-tauri/` (8 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src-tauri/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+    children:
+    - id: tests
+      name: Tests
+      kind: module
+      description: Bootstrapped from `src-tauri/tests/` (1 code files). Review and give it a purpose.
+      implements:
+        files:
+        - src-tauri/tests/**
+      tags:
+      - bootstrapped
+      status: uncharted
+      origin: afwe:bootstrap
+  - id: tests-2
+    name: Tests
+    kind: subsystem
+    description: Bootstrapped from `tests/` (35 code files). Review and give it a purpose.
+    implements:
+      files:
+      - tests/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+    children:
+    - id: unit
+      name: Unit
+      kind: module
+      description: Bootstrapped from `tests/unit/` (35 code files). Review and give it a purpose.
+      implements:
+        files:
+        - tests/unit/**
+      tags:
+      - bootstrapped
+      status: uncharted
+      origin: afwe:bootstrap
+  - id: components
+    name: Components
+    kind: module
+    description: Bootstrapped from `src/lib/components/` (26 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src/lib/components/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: i18n
+    name: I18n
+    kind: module
+    description: Bootstrapped from `src/lib/i18n/` (2 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src/lib/i18n/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: renderer
+    name: Renderer
+    kind: module
+    description: Bootstrapped from `src/lib/renderer/` (3 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src/lib/renderer/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: stores
+    name: Stores
+    kind: module
+    description: Bootstrapped from `src/lib/stores/` (13 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src/lib/stores/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: tauri
+    name: Tauri
+    kind: module
+    description: Bootstrapped from `src/lib/tauri/` (3 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src/lib/tauri/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap
+  - id: utils
+    name: Utils
+    kind: module
+    description: Bootstrapped from `src/lib/utils/` (15 code files). Review and give it a purpose.
+    implements:
+      files:
+      - src/lib/utils/**
+    tags:
+    - bootstrapped
+    status: uncharted
+    origin: afwe:bootstrap

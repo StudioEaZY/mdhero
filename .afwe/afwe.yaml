@@ -1,0 +1,43 @@
+format: afwe/3
+project:
+  name: mdhero
+  id: p0ff7ccfc8bd37f96
+  root: .
+analyzer:
+  include: []
+  ignore:
+  - .afwe/**
+  - node_modules/**
+  - target/**
+  - dist/**
+  - build/**
+  - .git/**
+  - '**/*.min.js'
+  - '**/*.lock'
+  max_file_size_kb: 512
+  languages: []
+policy:
+  auto_reconcile_min: 0.7
+  soft_reconcile_min: 0.5
+  create_proposals: true
+  fail_on_violation: true
+  pins:
+    slider: 4
+  checkgen: true
+  graduation:
+    require_human: true
+    min_probe_sessions: 3
+    require_hold_out: true
+  drift_tolerate_days: 7
+  drift_auto_adopt: false
+provenance:
+  retain_prompts: true
+vcs:
+  provider: git
+  auto_commit: false
+  test_command: pnpm test && pnpm check
+ci:
+  runs_on: ubuntu-latest
+  fixed_job_name: afwe-gate
+  verify_turn_records: true
+profile: engineer

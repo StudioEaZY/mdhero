@@ -1,0 +1,285 @@
+id: t0001
+turn_hash: turn-030105b85cd4
+alias: t0001
+epoch_id: epoch-d60d6f
+token_hash: c488328e805cf1062d401fc2a1f9d2f3ff1542cd9d8ff74fe7b4ab4e4ed7b13a
+claims:
+- path: .afwe
+  claimed_at: 2026-11-02T22:17:35Z
+- path: AGENTS.md
+  claimed_at: 2026-11-02T22:17:35Z
+- path: .github/workflows/afwe-gate.yml
+  claimed_at: 2026-11-02T22:17:35Z
+- path: scripts/build-quicklook.mjs
+  base_blob: 75fee81f21f3b8ee8ed9369283dda6ce6402510d
+  node: scripts
+  claimed_at: 2026-11-02T22:17:35Z
+- path: tests/unit/version-sync.test.ts
+  base_blob: c2cfb2e91ad2c626e482381d83567f2d7b17df84
+  node: unit
+  claimed_at: 2026-11-02T22:17:35Z
+base_head: dc4b3f5cfa2adc172052344e9391a41f0a795b26
+last_activity: 2026-11-02T22:17:34Z
+ts: 2026-11-02T22:17:34Z
+origin: llm:deepseek
+prompt: Bootstrap the AFWE ReBorn intent layer for MDHero and fix the two Windows-only baseline test failures
+prompt_hash: c0b307986be7864f
+task: task-t0001
+targets:
+- .afwe
+- AGENTS.md
+- .github/workflows/afwe-gate.yml
+- scripts/build-quicklook.mjs
+- tests/unit/version-sync.test.ts
+scope:
+  nodes:
+  - mdhero
+  files:
+  - AGENTS.md
+  - scripts/build-quicklook.mjs
+  - tests/unit/version-sync.test.ts
+intents:
+- id: bootstrap-afwe
+  action: create
+  targets:
+  - mdhero
+  title: Bootstrap the AFWE intent layer
+  statement: Install the AFWE ReBorn intent layer, architecture map, and CI gate for MDHero.
+- id: fix-windows-baseline
+  action: update
+  targets:
+  - scripts/build-quicklook.mjs
+  - tests/unit/version-sync.test.ts
+  title: Fix Windows baseline tests
+  statement: 'Make the baseline test suite pass on Windows without changing behavior: remove the import-breaking shebang and accept CRLF in Cargo.lock version detection.'
+status: ready
+touched:
+  nodes:
+  - src-tauri
+  files:
+  - .afwe/afwe.yaml
+  - .afwe/intents/bootstrap-afwe.yaml
+  - .afwe/intents/fix-windows-baseline.yaml
+  - .github/FUNDING.yml
+  - .github/ISSUE_TEMPLATE/bug_report.yml
+  - .github/ISSUE_TEMPLATE/config.yml
+  - .github/ISSUE_TEMPLATE/feature_request.yml
+  - .github/pull_request_template.md
+  - .github/workflows/afwe-gate.yml
+  - .github/workflows/build.yml
+  - .gitignore
+  - .vscode/extensions.json
+  - .vscode/settings.json
+  - src-tauri/.gitignore
+implements:
+  components:
+  - src/lib/components/AILookupSettings.svelte
+  - src/lib/components/AboutDialog.svelte
+  - src/lib/components/CustomPromptModal.svelte
+  - src/lib/components/DropZone.svelte
+  - src/lib/components/Editor.svelte
+  - src/lib/components/EmptyState.svelte
+  - src/lib/components/FrontmatterBar.svelte
+  - src/lib/components/ImageLightbox.svelte
+  - src/lib/components/LanguageDialog.svelte
+  - src/lib/components/MarkdownRenderer.svelte
+  - src/lib/components/OpenDialog.svelte
+  - src/lib/components/PanelResizer.svelte
+  - src/lib/components/PasteModal.svelte
+  - src/lib/components/PresentationView.svelte
+  - src/lib/components/ProgressBar.svelte
+  - src/lib/components/ReaderControls.svelte
+  - src/lib/components/ScrollToTop.svelte
+  - src/lib/components/SearchOverlay.svelte
+  - src/lib/components/SettingsDialog.svelte
+  - src/lib/components/StatusBar.svelte
+  - src/lib/components/TabBar.svelte
+  - src/lib/components/TableOfContents.svelte
+  - src/lib/components/Toast.svelte
+  - src/lib/components/Toolbar.svelte
+  - src/lib/components/UpdateBanner.svelte
+  - src/lib/components/UpdateToast.svelte
+  i18n:
+  - src/lib/i18n/index.ts
+  - src/lib/i18n/locales/de.json
+  - src/lib/i18n/locales/en.json
+  - src/lib/i18n/locales/es.json
+  - src/lib/i18n/locales/fr.json
+  - src/lib/i18n/locales/zh-CN.json
+  - src/lib/i18n/types.ts
+  quicklook:
+  - quicklook/Info.plist
+  - quicklook/MDHeroQuickLook.entitlements
+  - quicklook/Preview.swift
+  - quicklook/README.md
+  - quicklook/build-appex.sh
+  renderer:
+  - src/lib/renderer/mermaid-sanitize.ts
+  - src/lib/renderer/pipeline.ts
+  - src/lib/renderer/slides.ts
+  routes:
+  - src/routes/+layout.svelte
+  - src/routes/+layout.ts
+  - src/routes/+page.svelte
+  scripts:
+  - scripts/build-quicklook.mjs
+  src-tauri:
+  - src-tauri/.gitignore
+  - src-tauri/Cargo.toml
+  - src-tauri/Info.plist
+  - src-tauri/build.rs
+  - src-tauri/capabilities/default.json
+  - src-tauri/capabilities/desktop.json
+  - src-tauri/icons/android/mipmap-anydpi-v26/ic_launcher.xml
+  - src-tauri/icons/android/values/ic_launcher_background.xml
+  - src-tauri/src/commands.rs
+  - src-tauri/src/lib.rs
+  - src-tauri/src/main.rs
+  - src-tauri/src/menu.rs
+  - src-tauri/src/single_window.rs
+  - src-tauri/src/watcher.rs
+  - src-tauri/tauri.conf.json
+  - src-tauri/tauri.quicklook.conf.json
+  - src-tauri/tauri.release.conf.json
+  - src-tauri/tests/menu_window.rs
+  stores:
+  - src/lib/stores/aiLookup.ts
+  - src/lib/stores/autoUpdate.ts
+  - src/lib/stores/document.ts
+  - src/lib/stores/pinned.ts
+  - src/lib/stores/readingProgress.ts
+  - src/lib/stores/recents.ts
+  - src/lib/stores/search.ts
+  - src/lib/stores/settings.ts
+  - src/lib/stores/tabs.ts
+  - src/lib/stores/theme.ts
+  - src/lib/stores/toast.ts
+  - src/lib/stores/toc.ts
+  - src/lib/stores/updater.ts
+  tauri:
+  - src/lib/tauri/files.ts
+  - src/lib/tauri/session.ts
+  - src/lib/tauri/watcher.ts
+  tests:
+  - src-tauri/tests/menu_window.rs
+  tests-2:
+  - tests/fixtures/complete-test.md
+  - tests/fixtures/rtl-test/multi-lang.md
+  - tests/fixtures/sample.md
+  - tests/fixtures/scroll-sync-wrap.md
+  - tests/unit/allow-assets.test.ts
+  - tests/unit/code-block-wrap.test.ts
+  - tests/unit/copy-file-name.test.ts
+  - tests/unit/delayed-call.test.ts
+  - tests/unit/dompurify-pin.test.ts
+  - tests/unit/editor-per-tab.test.ts
+  - tests/unit/hljs-dark-coverage.test.ts
+  - tests/unit/i18n.test.ts
+  - tests/unit/line-gutter.test.ts
+  - tests/unit/line-patch.test.ts
+  - tests/unit/markdown-highlight-budget.test.ts
+  - tests/unit/markdown-highlight-escape.test.ts
+  - tests/unit/markdown-highlight.test.ts
+  - tests/unit/opener-capability.test.ts
+  - tests/unit/path.test.ts
+  - tests/unit/plaintext-highlight.test.ts
+  - tests/unit/platform.test.ts
+  - tests/unit/quicklook-bundle.test.ts
+  - tests/unit/reload-file.test.ts
+  - tests/unit/rtl-direction.test.ts
+  - tests/unit/session-restore.test.ts
+  - tests/unit/settings-booleans.test.ts
+  - tests/unit/side-tabs.test.ts
+  - tests/unit/slides.test.ts
+  - tests/unit/split-sync.test.ts
+  - tests/unit/tabs-disk-changed.test.ts
+  - tests/unit/tabs-session.test.ts
+  - tests/unit/text-search.test.ts
+  - tests/unit/toc-width.test.ts
+  - tests/unit/unsaved-prompt.test.ts
+  - tests/unit/update-check.test.ts
+  - tests/unit/utf8-bom.test.ts
+  - tests/unit/version-sync.test.ts
+  - tests/unit/watcher.test.ts
+  - tests/unit/wheel-zoom.test.ts
+  types:
+  - src/types/markdown-it-plugins.d.ts
+  unit:
+  - tests/unit/allow-assets.test.ts
+  - tests/unit/code-block-wrap.test.ts
+  - tests/unit/copy-file-name.test.ts
+  - tests/unit/delayed-call.test.ts
+  - tests/unit/dompurify-pin.test.ts
+  - tests/unit/editor-per-tab.test.ts
+  - tests/unit/hljs-dark-coverage.test.ts
+  - tests/unit/i18n.test.ts
+  - tests/unit/line-gutter.test.ts
+  - tests/unit/line-patch.test.ts
+  - tests/unit/markdown-highlight-budget.test.ts
+  - tests/unit/markdown-highlight-escape.test.ts
+  - tests/unit/markdown-highlight.test.ts
+  - tests/unit/opener-capability.test.ts
+  - tests/unit/path.test.ts
+  - tests/unit/plaintext-highlight.test.ts
+  - tests/unit/platform.test.ts
+  - tests/unit/quicklook-bundle.test.ts
+  - tests/unit/reload-file.test.ts
+  - tests/unit/rtl-direction.test.ts
+  - tests/unit/session-restore.test.ts
+  - tests/unit/settings-booleans.test.ts
+  - tests/unit/side-tabs.test.ts
+  - tests/unit/slides.test.ts
+  - tests/unit/split-sync.test.ts
+  - tests/unit/tabs-disk-changed.test.ts
+  - tests/unit/tabs-session.test.ts
+  - tests/unit/text-search.test.ts
+  - tests/unit/toc-width.test.ts
+  - tests/unit/unsaved-prompt.test.ts
+  - tests/unit/update-check.test.ts
+  - tests/unit/utf8-bom.test.ts
+  - tests/unit/version-sync.test.ts
+  - tests/unit/watcher.test.ts
+  - tests/unit/wheel-zoom.test.ts
+  utils:
+  - src/lib/utils/clipboard.ts
+  - src/lib/utils/delayed-call.ts
+  - src/lib/utils/layout.ts
+  - src/lib/utils/line-gutter.ts
+  - src/lib/utils/line-patch.ts
+  - src/lib/utils/llm.ts
+  - src/lib/utils/markdown-highlight.ts
+  - src/lib/utils/path.ts
+  - src/lib/utils/platform.ts
+  - src/lib/utils/scroll-sync.ts
+  - src/lib/utils/split-sync.ts
+  - src/lib/utils/text-search.ts
+  - src/lib/utils/unsaved-prompt.ts
+  - src/lib/utils/url.ts
+  - src/lib/utils/wheel-zoom.ts
+checks:
+- id: afwe-verify
+  title: constraints and active guardrails
+  trust: deterministic
+  authored_by: afwe
+  passed: true
+  blocking: true
+- id: project-tests
+  title: pnpm test && pnpm check
+  trust: deterministic
+  authored_by: human
+  passed: true
+  blocking: true
+  ran_against: working-tree
+strength: deterministic
+confidence: 1.0
+confidence_parts:
+  clarity: 1.0
+  mapping: 1.0
+  pins: 1.0
+  verification: 1.0
+gate:
+  decision: ready
+footer_shown: false
+summary: Bootstrap AFWE ReBorn intent layer; fix Windows baseline test import and CRLF version detection.
+turn_token: afwe_tok_336bf8087067a7a1ce1b808a9d4a0e3c
+session_id: sess-f349be
