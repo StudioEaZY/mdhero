@@ -1,0 +1,17 @@
+id: afwe-gate-windows
+title: Run AFWE gate on Windows
+statement: ReBorn 2017fca afwe-cli does not compile on Linux because presence/watcher.rs uses libc without a dependency; run the gate on Windows and use bash for the installer step.
+status: active
+origin: llm:deepseek
+attaches:
+  nodes:
+  - mdhero
+from_turns:
+- t0005
+history:
+- turn: t0005
+  ts: 2026-11-02T23:10:40Z
+  statement: ReBorn 2017fca afwe-cli does not compile on Linux because presence/watcher.rs uses libc without a dependency; run the gate on Windows and use bash for the installer step.
+created: 2026-11-02T23:10:40Z
+updated: 2026-11-02T23:10:40Z
+task: task-t0005

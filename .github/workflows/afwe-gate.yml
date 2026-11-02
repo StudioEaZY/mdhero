@@ -6,7 +6,8 @@ name: AFWE Architecture Gate
 on: [push, pull_request]
 jobs:
   afwe-gate:
-    runs-on: ubuntu-latest
+    # ReBorn 2017fca afwe-cli fails to compile on Linux (missing libc).
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v5
         with:
@@ -29,6 +30,7 @@ jobs:
           key: ${{ runner.os }}-afwe-${{ hashFiles('.afwe/manifest.yaml') }}
       - name: Install or Acquire AFWE Binary
         if: steps.cache-afwe.outputs.cache-hit != 'true'
+        shell: bash
         env:
           AFWE_INSTALL_CMD: ${{ vars.AFWE_INSTALL_COMMAND }}
           AFWE_BINARY_URL: ${{ vars.AFWE_BINARY_URL }}
