@@ -1,0 +1,17 @@
+id: preserve-soft-breaks
+title: Preserve single newlines in rendered Markdown
+statement: Enable markdown-it hard breaks so a single newline renders as a line break in View, print, and Quick Look, and add a regression test for the shared options.
+status: active
+origin: llm:deepseek
+attaches:
+  nodes:
+  - renderer
+from_turns:
+- t0006
+history:
+- turn: t0006
+  ts: 2026-11-03T08:01:15Z
+  statement: Enable markdown-it hard breaks so a single newline renders as a line break in View, print, and Quick Look, and add a regression test for the shared options.
+created: 2026-11-03T08:01:15Z
+updated: 2026-11-03T08:01:15Z
+task: task-t0006

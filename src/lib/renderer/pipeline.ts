@@ -1,4 +1,5 @@
 import MarkdownIt from "markdown-it";
+import { MARKDOWN_IT_OPTIONS } from "./options";
 import DOMPurify from "dompurify";
 import taskLists from "markdown-it-task-lists";
 import anchor from "markdown-it-anchor";
@@ -240,9 +241,7 @@ export async function initRenderer(): Promise<void> {
   if (initialized) return;
 
   md = new MarkdownIt({
-    html: false,
-    linkify: true,
-    typographer: true,
+    ...MARKDOWN_IT_OPTIONS,
     highlight: (str, lang) => {
       if (lang && lang !== "mermaid" && hljs.getLanguage(lang)) {
         try {
@@ -285,9 +284,7 @@ export function renderFull(markdown: string, baseDir?: string): RenderResult {
   if (!md) {
     // Auto-init synchronously if not yet initialized
     md = new MarkdownIt({
-    html: false,
-    linkify: true,
-    typographer: true,
+    ...MARKDOWN_IT_OPTIONS,
     highlight: (str, lang) => {
       if (lang && lang !== "mermaid" && hljs.getLanguage(lang)) {
         try {
