@@ -27,7 +27,7 @@ intents:
   - mdhero
   title: Install frontend dependencies in the AFWE gate
   statement: The AFWE gate runs pnpm test and pnpm check; the workflow must install Node, pnpm, and the locked frontend dependencies first.
-status: ready
+status: committed
 touched:
   nodes:
   - src-tauri
@@ -254,5 +254,20 @@ gate:
   decision: ready
 footer_shown: false
 summary: Install Node, pnpm, and locked frontend dependencies in the AFWE CI gate before running project tests.
+committed_at: 2026-11-14T11:59:15Z
+commit_sha: e7ce432308c5536fc7e8d437e14a22067b82d332
 turn_token: afwe_tok_800d26b881c771b4a466705452db690c
+post_hashes:
+  .afwe/intents/fix-afwe-ci.yaml: d8dfbddd00d93e56
+  .github/FUNDING.yml: be9f683a20a358ca
+  .github/ISSUE_TEMPLATE/bug_report.yml: b167f2dbddc7a08b
+  .github/ISSUE_TEMPLATE/config.yml: fc648932d7557851
+  .github/ISSUE_TEMPLATE/feature_request.yml: d8ae9d268633fa59
+  .github/pull_request_template.md: 0419817c6bd91a55
+  .github/workflows/afwe-gate.yml: 69181d101a8f6334
+  .github/workflows/build.yml: 26e6d5f00cf33cdc
+  .gitignore: 6077615810f4144e
+  .vscode/extensions.json: f3ee019855acff64
+  .vscode/settings.json: dd240e24f82f89ca
+  src-tauri/.gitignore: 2aefdfb7c2883035
 session_id: sess-0ad453

@@ -26,7 +26,17 @@ export interface ReaderSettings {
   /** Tabs in a row across the top, or in a resizable panel on the left. */
   tabsPosition: "top" | "side";
   /** Width of the side tabs panel in px. */
-  tabsWidth: number;
+    tabsWidth: number;
+  /** Authorship tracking on/off. When enabled, tracks who wrote what (You, AI, Other). */
+  authorshipEnabled: boolean;
+  /** Whether the user chose "Don't ask again" on the authorship prompt. */
+  authorshipPromptSeen: boolean;
+  /** Default author attribution when pasting into the document: "ai", "you", "other", or "prompt". */
+  authorshipDefaultPasteAs: "ai" | "you" | "other" | "prompt";
+  /** Show the floating "Paste As" pill on paste for frictionless re-attribution. */
+  authorshipShowPasteAsWidget: boolean;
+  /** Highlight AI and other authors visually in the editor. */
+  authorshipHighlightInEditor: boolean;
 }
 
 const STORAGE_KEY = "mdhero-settings";
@@ -99,6 +109,11 @@ function loadSettings(): ReaderSettings {
     autoCheckUpdates: true,
     tabsPosition: "top",
     tabsWidth: DEFAULT_TABS_WIDTH,
+    authorshipEnabled: false,
+    authorshipPromptSeen: false,
+    authorshipDefaultPasteAs: "ai",
+    authorshipShowPasteAsWidget: true,
+    authorshipHighlightInEditor: true,
   };
 
   if (typeof localStorage === "undefined") return defaults;
@@ -123,6 +138,13 @@ function loadSettings(): ReaderSettings {
         autoCheckUpdates: storedBoolean(parsed.autoCheckUpdates, defaults.autoCheckUpdates),
         tabsPosition: parsed.tabsPosition === "side" ? "side" : "top",
         tabsWidth: clampTabsWidth(parsed.tabsWidth),
+        authorshipEnabled: storedBoolean(parsed.authorshipEnabled, defaults.authorshipEnabled),
+        authorshipPromptSeen: storedBoolean(parsed.authorshipPromptSeen, defaults.authorshipPromptSeen),
+        authorshipDefaultPasteAs: ["ai", "you", "other", "prompt"].includes(parsed.authorshipDefaultPasteAs)
+          ? parsed.authorshipDefaultPasteAs
+          : defaults.authorshipDefaultPasteAs,
+        authorshipShowPasteAsWidget: storedBoolean(parsed.authorshipShowPasteAsWidget, defaults.authorshipShowPasteAsWidget),
+        authorshipHighlightInEditor: storedBoolean(parsed.authorshipHighlightInEditor, defaults.authorshipHighlightInEditor),
       };
     }
   } catch {}

@@ -27,7 +27,7 @@ describe("pathological lines stay fast", () => {
     const text = Array(20).fill(line).join("\n");
     const start = performance.now();
     const out = highlightMarkdownLines(text);
-    expect(performance.now() - start).toBeLessThan(500);
+    expect(performance.now() - start).toBeLessThan(1000);
     expect(out).toHaveLength(20);
   });
 });

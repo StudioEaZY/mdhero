@@ -15,6 +15,9 @@
   } from "$lib/editor/cm6";
   import { getSession, putSession } from "$lib/editor/sessions";
   import { editorSearch } from "$lib/editor/search-bridge";
+  import PasteAsWidget from "./PasteAsWidget.svelte";
+  import { setAuthorshipActiveTab } from "$lib/editor/cm6-authorship";
+  import { selectTabAuthorship } from "$lib/stores/authorship";
 
   let {
     tabId,
@@ -66,6 +69,8 @@
     if (!view) return;
     putSession(currentTabId, view.state);
     currentTabId = nextTabId;
+    setAuthorshipActiveTab(nextTabId);
+    selectTabAuthorship(nextTabId);
     const existing = getSession(nextTabId);
     if (existing) {
       view.setState(existing);
@@ -95,6 +100,8 @@
       createEditorState(value, dark, fontSize, lineHeight, showLineNumbers, syntaxHighlighting);
     putSession(tabId, state);
     currentTabId = tabId;
+    setAuthorshipActiveTab(tabId);
+    selectTabAuthorship(tabId);
     view = new EditorView({ state, parent: host });
     searchController = new EditorSearchController(view);
     editorSearch.register(searchController);
@@ -156,6 +163,7 @@
     aria-label="Markdown editor"
     aria-multiline="true"
   ></div>
+  <PasteAsWidget />
 </div>
 
 <style>

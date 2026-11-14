@@ -1,6 +1,8 @@
 <script lang="ts">
   import { document as docStore } from "$lib/stores/document";
   import { t } from "$lib/i18n";
+  import { settings } from "$lib/stores/settings";
+  import { currentTabAuthorship, authorshipStats } from "$lib/stores/authorship";
 
   // $t, not translate(): these run in the template, so they must re-run when
   // the language changes.

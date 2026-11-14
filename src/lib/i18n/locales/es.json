@@ -334,5 +334,24 @@
   "files": {
     "openFailed": "No se pudo abrir el archivo: {err}",
     "untitled": "Sin título"
+  },
+  "authorship": {
+    "modalTitle": "¿Activar seguimiento de autoría?",
+    "modalDesc": "Registra lo que escribes tú frente a la ayuda de la IA o ediciones externas. Los datos se guardan limpiamente al final del archivo Markdown.",
+    "enable": "Activar autoría",
+    "dontAskAgain": "No volver a preguntar",
+    "sectionTitle": "Autoría",
+    "sectionHint": "Registra autoría humana vs IA mediante anotaciones abiertas de Markdown.",
+    "enabled": "Seguimiento de autoría",
+    "enabledHint": "Registra quién escribió qué (Tú, IA, Otros).",
+    "defaultPasteAs": "Atribución de pegado predeterminada",
+    "defaultPasteAsHint": "Atribución asignada por defecto al pegar texto.",
+    "pasteAsAi": "IA (Recomendado)",
+    "pasteAsYou": "Tú (Humano)",
+    "pasteAsOther": "Otro / Externo",
+    "showPasteAs": "Mostrar indicador 'Pegar como'",
+    "showPasteAsHint": "Muestra una pequeña píldora flotante tras pegar para cambiar la atribución.",
+    "highlightInEditor": "Resaltar autores en el editor",
+    "highlightInEditorHint": "Destaca sutilmente el texto de IA en el editor."
   }
 }

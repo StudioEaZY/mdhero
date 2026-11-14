@@ -334,5 +334,24 @@
   "files": {
     "openFailed": "Impossible d'ouvrir le fichier : {err}",
     "untitled": "Sans titre"
+  },
+  "authorship": {
+    "modalTitle": "Activer le suivi de la paternité ?",
+    "modalDesc": "Suivez ce que vous écrivez par rapport à l'IA ou aux modifications externes. Les données sont enregistrées à la fin du fichier Markdown.",
+    "enable": "Activer la paternité",
+    "dontAskAgain": "Ne plus demander",
+    "sectionTitle": "Paternité des textes",
+    "sectionHint": "Suivez la rédaction humaine vs IA grâce aux annotations Markdown.",
+    "enabled": "Suivre la paternité",
+    "enabledHint": "Enregistre qui a écrit quoi (Vous, IA, Autre).",
+    "defaultPasteAs": "Attribution de collage par défaut",
+    "defaultPasteAsHint": "Attribution par défaut lors du collage de texte.",
+    "pasteAsAi": "IA (Recommandé)",
+    "pasteAsYou": "Vous (Humain)",
+    "pasteAsOther": "Autre / Externe",
+    "showPasteAs": "Afficher l'indicateur 'Coller comme'",
+    "showPasteAsHint": "Affiche une pilule flottante pour réattribuer le texte en un clic.",
+    "highlightInEditor": "Mettre en valeur les auteurs",
+    "highlightInEditorHint": "Met en évidence le texte généré par l'IA dans l'éditeur."
   }
 }

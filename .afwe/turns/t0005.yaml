@@ -27,7 +27,7 @@ intents:
   - mdhero
   title: Run AFWE gate on Windows
   statement: ReBorn 2017fca afwe-cli does not compile on Linux because presence/watcher.rs uses libc without a dependency; run the gate on Windows and use bash for the installer step.
-status: ready
+status: committed
 touched:
   nodes:
   - src-tauri
@@ -255,5 +255,20 @@ gate:
   decision: ready
 footer_shown: false
 summary: Run the AFWE architecture gate on Windows and use bash for its installer because the pinned ReBorn CLI does not compile on Linux.
+committed_at: 2026-11-14T11:59:18Z
+commit_sha: 7d5ead900b270b078d8a671a58811a5b2c53b6e4
 turn_token: afwe_tok_bb1462127704eced468acf8352338548
+post_hashes:
+  .afwe/intents/afwe-gate-windows.yaml: ff97aa4f04d07e1f
+  .github/FUNDING.yml: be9f683a20a358ca
+  .github/ISSUE_TEMPLATE/bug_report.yml: b167f2dbddc7a08b
+  .github/ISSUE_TEMPLATE/config.yml: fc648932d7557851
+  .github/ISSUE_TEMPLATE/feature_request.yml: d8ae9d268633fa59
+  .github/pull_request_template.md: 0419817c6bd91a55
+  .github/workflows/afwe-gate.yml: 69181d101a8f6334
+  .github/workflows/build.yml: 26e6d5f00cf33cdc
+  .gitignore: 6077615810f4144e
+  .vscode/extensions.json: f3ee019855acff64
+  .vscode/settings.json: dd240e24f82f89ca
+  src-tauri/.gitignore: 2aefdfb7c2883035
 session_id: sess-0ad453

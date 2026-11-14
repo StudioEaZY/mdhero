@@ -334,5 +334,24 @@
   "files": {
     "openFailed": "Datei konnte nicht geöffnet werden: {err}",
     "untitled": "Unbenannt"
+  },
+  "authorship": {
+    "modalTitle": "Autorenschaft-Tracking aktivieren?",
+    "modalDesc": "Verfolge, was du selbst schreibst im Vergleich zu KI-Unterstützung oder externen Beiträgen. Die Daten werden sauber am Ende der Markdown-Datei gespeichert.",
+    "enable": "Autorenschaft aktivieren",
+    "dontAskAgain": "Nicht mehr fragen",
+    "sectionTitle": "Autorenschaft",
+    "sectionHint": "Verfolge menschliche vs. KI-Texte mit offenen Markdown-Annotationen.",
+    "enabled": "Autorenschaft verfolgen",
+    "enabledHint": "Erfasse, wer was geschrieben hat (Du, KI, Andere).",
+    "defaultPasteAs": "Standard-Einfügezuordnung",
+    "defaultPasteAsHint": "Standardmäßige Zuordnung beim Einfügen von Text.",
+    "pasteAsAi": "KI (Empfohlen)",
+    "pasteAsYou": "Du (Mensch)",
+    "pasteAsOther": "Andere / Extern",
+    "showPasteAs": "'Einfügen als'-Hinweis anzeigen",
+    "showPasteAsHint": "Zeigt nach dem Einfügen eine kleine Leiste zur schnellen Neuzuordnung an.",
+    "highlightInEditor": "Autoren im Editor hervorheben",
+    "highlightInEditorHint": "KI-Texte im Editor dezent farblich kennzeichnen."
   }
 }

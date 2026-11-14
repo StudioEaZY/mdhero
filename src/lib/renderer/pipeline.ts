@@ -1,3 +1,4 @@
+import { stripAuthorship } from "../authorship";
 import MarkdownIt from "markdown-it";
 import { MARKDOWN_IT_OPTIONS } from "./options";
 import DOMPurify from "dompurify";
@@ -123,7 +124,7 @@ function stripBom(markdown: string): string {
  * keeps it — Marp slide splitting needs the body without it (#44).
  */
 export function stripFrontmatter(markdown: string): string {
-  const source = stripBom(markdown);
+  const source = stripAuthorship(stripBom(markdown));
   const m = source.match(FRONTMATTER_RE);
   return m ? m[2] : source;
 }

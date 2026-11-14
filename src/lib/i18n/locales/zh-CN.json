@@ -332,5 +332,24 @@
   "files": {
     "openFailed": "无法打开文件：{err}",
     "untitled": "未命名"
+  },
+  "authorship": {
+    "modalTitle": "启用著作权追踪？",
+    "modalDesc": "追踪由您撰写的内容与 AI 辅助或外部编辑的区别。数据将保存在 Markdown 文件末尾。",
+    "enable": "启用著作权追踪",
+    "dontAskAgain": "不再询问",
+    "sectionTitle": "著作权",
+    "sectionHint": "使用开放的 Markdown 注解追踪人类与 AI 的协作创作。",
+    "enabled": "追踪作者",
+    "enabledHint": "记录文本创作者（您、AI、其他外部编辑）。",
+    "defaultPasteAs": "默认粘贴归属",
+    "defaultPasteAsHint": "粘贴文本时的默认归属设置。",
+    "pasteAsAi": "AI（推荐）",
+    "pasteAsYou": "您（人类）",
+    "pasteAsOther": "其他 / 外部",
+    "showPasteAs": "显示“粘贴为”提示",
+    "showPasteAsHint": "粘贴后显示浮动药丸以便快速切换归属。",
+    "highlightInEditor": "在编辑器中高亮作者",
+    "highlightInEditorHint": "在编辑器中以微妙颜色标记 AI 辅助文字。"
   }
 }

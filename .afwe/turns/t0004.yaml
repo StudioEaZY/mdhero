@@ -77,7 +77,7 @@ intents:
   - src/lib/components/SearchOverlay.svelte
   title: Bridge find to CM6
   statement: Keep the existing find overlay and wire it to CM6 search so match count, next, previous, and highlighting still work.
-status: ready
+status: committed
 touched:
   nodes:
   - components
@@ -368,5 +368,36 @@ gate:
   decision: ready
 footer_shown: false
 summary: Add the opt-in CodeMirror 6 editor preview with per-tab history, line numbers, Markdown highlighting, and find integration; keep the classic editor and split mode intact.
+committed_at: 2026-11-14T11:59:17Z
+commit_sha: a9fc92ba15edeb7149cbbdf643d14af8a62da252
 turn_token: afwe_tok_1fe6b10b643c1ad6ed4de32b7a1b755f
+post_hashes:
+  .afwe/intents/add-cm6-preview.yaml: 843d91be59df9c17
+  .afwe/intents/bridge-search.yaml: cc4bc8a9496baf92
+  .github/FUNDING.yml: be9f683a20a358ca
+  .github/ISSUE_TEMPLATE/bug_report.yml: b167f2dbddc7a08b
+  .github/ISSUE_TEMPLATE/config.yml: fc648932d7557851
+  .github/ISSUE_TEMPLATE/feature_request.yml: d8ae9d268633fa59
+  .github/pull_request_template.md: 0419817c6bd91a55
+  .github/workflows/afwe-gate.yml: 69181d101a8f6334
+  .github/workflows/build.yml: 26e6d5f00cf33cdc
+  .gitignore: 6077615810f4144e
+  .vscode/extensions.json: f3ee019855acff64
+  .vscode/settings.json: dd240e24f82f89ca
+  package.json: 3d312b29ba3e5262
+  pnpm-lock.yaml: ede24fba385d07fc
+  src-tauri/.gitignore: 2aefdfb7c2883035
+  src/lib/components/CodeMirrorEditor.svelte: d8904ee2fff5086e
+  src/lib/components/SearchOverlay.svelte: 82efbd3c62b07095
+  src/lib/components/SettingsDialog.svelte: 31938d572ec27d8a
+  src/lib/editor/cm6.ts: 457bba07a45430ca
+  src/lib/editor/search-bridge.ts: 7bf3657d3fc05e6e
+  src/lib/editor/sessions.ts: df2bb3bfe6611bd9
+  src/lib/i18n/locales/de.json: 860c567133d07b21
+  src/lib/i18n/locales/en.json: ab75b4873bfe6466
+  src/lib/i18n/locales/es.json: 17d2c995ab50ebb4
+  src/lib/i18n/locales/fr.json: c50f7c17ae2a1ec1
+  src/lib/i18n/locales/zh-CN.json: 421a13ca38f5e170
+  src/lib/stores/settings.ts: 3ec93f7c44060fb6
+  src/routes/+page.svelte: ab0c73c838746fc3
 session_id: sess-0ad453

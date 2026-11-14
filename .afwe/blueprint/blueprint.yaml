@@ -166,14 +166,20 @@ nodes:
     name: Editor
     kind: module
     purpose: CodeMirror 6 editor core, Vim, live preview, undo, focus, typewriter, and auto-pair.
-    status: planned
-    origin: llm:deepseek
+    implements:
+      files:
+      - src/lib/editor/**
+    status: active
+    origin: llm:gemini
   - id: authorship
     name: Authorship
     kind: module
-    purpose: Manual, local authorship attribution using the open Markdown Annotations format.
-    status: planned
-    origin: llm:deepseek
+    purpose: Dual-level authorship tracking with automatic AI detection and Paste As.
+    implements:
+      files:
+      - src/lib/authorship/**
+    status: active
+    origin: llm:gemini
   - id: preview
     name: Preview
     kind: module

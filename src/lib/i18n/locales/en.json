@@ -334,5 +334,24 @@
   "files": {
     "openFailed": "Failed to open file: {err}",
     "untitled": "Untitled"
+  },
+  "authorship": {
+    "modalTitle": "Enable Authorship Tracking?",
+    "modalDesc": "Track what you write versus AI assistance or external contributions. Authorship data is saved cleanly at the bottom of the Markdown file—hidden while editing in MDHero, but remaining visible and fully compatible in other Markdown apps.",
+    "enable": "Enable Authorship",
+    "dontAskAgain": "Don't Ask Again",
+    "sectionTitle": "Authorship",
+    "sectionHint": "Track human vs AI writing and outside edits using open Markdown annotations.",
+    "enabled": "Track Authorship",
+    "enabledHint": "Record who wrote what (You, AI, Other) and preserve annotations at the end of the file.",
+    "defaultPasteAs": "Default Paste Attribution",
+    "defaultPasteAsHint": "Default attribution when pasting text into the document.",
+    "pasteAsAi": "AI (Recommended)",
+    "pasteAsYou": "You (Human)",
+    "pasteAsOther": "Other / External",
+    "showPasteAs": "Show 'Paste As' Indicator",
+    "showPasteAsHint": "Show a floating pill after pasting to allow 1-click reattribution.",
+    "highlightInEditor": "Highlight Authors in Editor",
+    "highlightInEditorHint": "Display subtle color styling on AI-assisted text in the editor."
   }
 }

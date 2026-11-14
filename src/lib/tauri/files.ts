@@ -1,3 +1,4 @@
+import { initTabAuthorship } from "../stores/authorship";
 import { invoke } from "@tauri-apps/api/core";
 import { get } from "svelte/store";
 import { open, save } from "@tauri-apps/plugin-dialog";

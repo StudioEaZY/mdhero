@@ -23,7 +23,7 @@ intents:
   - mdhero
   title: Map planned modules
   statement: Add blueprint homes for the CM6 editor, authorship, and per-platform preview work.
-status: ready
+status: committed
 touched:
   nodes:
   - src-tauri
@@ -251,5 +251,21 @@ gate:
   decision: ready
 footer_shown: false
 summary: Map planned editor, authorship, and per-platform preview modules in the AFWE blueprint.
+committed_at: 2026-11-14T11:59:11Z
+commit_sha: 52579054de43bcd45b406950155d19597574172c
 turn_token: afwe_tok_14c3304ce05d4cf169a6d07a3d710e9f
+post_hashes:
+  .afwe/blueprint/blueprint.yaml: 7cd6c97a677be9b6
+  .afwe/intents/map-planned-modules.yaml: 01b7c8918402f0b4
+  .github/FUNDING.yml: be9f683a20a358ca
+  .github/ISSUE_TEMPLATE/bug_report.yml: b167f2dbddc7a08b
+  .github/ISSUE_TEMPLATE/config.yml: fc648932d7557851
+  .github/ISSUE_TEMPLATE/feature_request.yml: d8ae9d268633fa59
+  .github/pull_request_template.md: 0419817c6bd91a55
+  .github/workflows/afwe-gate.yml: 69181d101a8f6334
+  .github/workflows/build.yml: 26e6d5f00cf33cdc
+  .gitignore: 6077615810f4144e
+  .vscode/extensions.json: f3ee019855acff64
+  .vscode/settings.json: dd240e24f82f89ca
+  src-tauri/.gitignore: 2aefdfb7c2883035
 session_id: sess-0ad453

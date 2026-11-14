@@ -36,6 +36,8 @@
   import PasteModal from "$lib/components/PasteModal.svelte";
   import OpenDialog from "$lib/components/OpenDialog.svelte";
   import SettingsDialog from "$lib/components/SettingsDialog.svelte";
+  import AuthorshipPromptModal from "$lib/components/AuthorshipPromptModal.svelte";
+  import { getSerializedContent, selectTabAuthorship } from "$lib/stores/authorship";
   import LanguageDialog from "$lib/components/LanguageDialog.svelte";
   import AboutDialog from "$lib/components/AboutDialog.svelte";
   import CustomPromptModal from "$lib/components/CustomPromptModal.svelte";
@@ -66,6 +68,7 @@
   let pasteDefaultMode = $state<"paste" | "url">("paste");
   let openVisible = $state(false);
   let settingsVisible = $state(false);
+  let authorshipPromptVisible = $state(false);
   let languageVisible = $state(false);
   let aboutVisible = $state(false);
   let customPromptVisible = $state(false);
@@ -98,7 +101,7 @@
   // ESC handler. Each modal's own ESC handler also calls stopPropagation(); the
   // two together cover both focus-inside and focus-outside-modal cases.
   let anyModalVisible = $derived(
-    searchVisible || pasteVisible || openVisible || settingsVisible || aboutVisible || customPromptVisible || lightboxVisible || languageVisible
+    searchVisible || pasteVisible || openVisible || settingsVisible || aboutVisible || customPromptVisible || lightboxVisible || languageVisible || authorshipPromptVisible
   );
 
   // Reading progress: debounced scroll save + restore guard
@@ -884,6 +887,7 @@
       tabStore.goHome();
     } else {
       tabStore.switchTab(nextId);
+      selectTabAuthorship(nextId);
     }
   }
 
@@ -1217,6 +1221,7 @@
   <PasteModal bind:visible={pasteVisible} defaultMode={pasteDefaultMode} />
   <OpenDialog bind:visible={openVisible} />
   <SettingsDialog bind:visible={settingsVisible} />
+  <AuthorshipPromptModal bind:visible={authorshipPromptVisible} />
   <LanguageDialog bind:visible={languageVisible} />
   <AboutDialog bind:visible={aboutVisible} />
   <CustomPromptModal bind:visible={customPromptVisible} selection={customPromptSelection} />

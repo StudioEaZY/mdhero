@@ -1,0 +1,358 @@
+id: t0007
+turn_hash: turn-c5651eb37aaa
+alias: t0007
+epoch_id: epoch-a51225
+token_hash: f32c0319814080ed6fa96a60dabd1efe7c7feb2154be48a8da1559735d99fbce
+base_head: 6beafea8b702ee55c1af641d362de84149c0e33b
+last_activity: 2026-11-14T11:59:25Z
+ts: 2026-11-14T11:59:25Z
+origin: llm:gemini
+prompt: "automatic paste as \"AUthors AI being defaut\"\n\nor if we can techincally use meta data of where smt was copied from say for example from chatgpt.com gemini.com then auto paste as AI\n\nut also support writing tools (MacOs, WIndows, and if on linux by providers, Raylib), and AI Look UPs pastes, and hopelly Win-powertoys Advanced Paste it touched by AI if we can hopefully I wanna make things automatic but I'd rather allow friction with every paste now = \"Paste AS\" if We don't opt out of Haveing AI - Author \n\n---\nI was also thinking of using this `https://github.com/bloknayrb/obsidian-authorship-tracker` as a very very good refence of how to implement authorship instead of just pasing account for outside software edits etc is also helpful since this is md... It's more focused on note wide while iA is more on sections/text it self I want both\n\n`\nEnable Authorship?\nAuthorship annotations will be saved at the end of the file. Hidden in MDHero\n, and visible in other apps. (Please reword)\n\nEnable Authorship\n\nDon't Ask Again\n\nCancel\n\nX\n`\n\nHopefully you get the point\n"
+prompt_hash: f2a1fd83b0fa7ede
+task: task-t0007
+scope:
+  nodes:
+  - authorship
+  - mdhero
+  - editor
+intents:
+- id: implement-authorship
+  action: create
+  targets:
+  - authorship
+  - editor
+  - src/lib/authorship
+  - src/lib/components/AuthorshipPromptModal.svelte
+  - src/lib/components/PasteAsWidget.svelte
+  - src/lib/editor/cm6-authorship.ts
+  - src/lib/stores/authorship.ts
+  - src/lib/stores/settings.ts
+  - src/lib/components/SettingsDialog.svelte
+  - src/lib/components/StatusBar.svelte
+  title: Implement dual-level Authorship and Paste As
+  statement: Implement note-wide and span-level Authorship tracking with automatic AI detection from clipboard metadata, Paste As quick toggle widget, opt-in prompt modal, outside software edit detection, and open Markdown annotations.
+status: ready
+touched:
+  nodes:
+  - components
+  - editor
+  - i18n
+  - renderer
+  - routes
+  - src-tauri
+  - stores
+  - tauri
+  - tests-2
+  - unit
+  files:
+  - .afwe/afwe.yaml
+  - .afwe/blueprint/blueprint.yaml
+  - .afwe/intents/implement-authorship.yaml
+  - .github/FUNDING.yml
+  - .github/ISSUE_TEMPLATE/bug_report.yml
+  - .github/ISSUE_TEMPLATE/config.yml
+  - .github/ISSUE_TEMPLATE/feature_request.yml
+  - .github/pull_request_template.md
+  - .github/workflows/afwe-gate.yml
+  - .github/workflows/build.yml
+  - .gitignore
+  - .vscode/extensions.json
+  - .vscode/settings.json
+  - src-tauri/.gitignore
+  - src/lib/authorship/clipboard.ts
+  - src/lib/authorship/index.ts
+  - src/lib/authorship/parser.ts
+  - src/lib/authorship/types.ts
+  - src/lib/components/AuthorshipPromptModal.svelte
+  - src/lib/components/CodeMirrorEditor.svelte
+  - src/lib/components/PasteAsWidget.svelte
+  - src/lib/components/SettingsDialog.svelte
+  - src/lib/components/StatusBar.svelte
+  - src/lib/editor/cm6-authorship.ts
+  - src/lib/editor/cm6.ts
+  - src/lib/i18n/locales/de.json
+  - src/lib/i18n/locales/en.json
+  - src/lib/i18n/locales/es.json
+  - src/lib/i18n/locales/fr.json
+  - src/lib/i18n/locales/zh-CN.json
+  - src/lib/renderer/pipeline.ts
+  - src/lib/stores/authorship.ts
+  - src/lib/stores/settings.ts
+  - src/lib/tauri/files.ts
+  - src/routes/+page.svelte
+  - tests/unit/authorship.test.ts
+  - tests/unit/markdown-highlight-budget.test.ts
+  symbols:
+  - src/lib/editor/cm6.ts::createEditorState
+  - src/lib/renderer/pipeline.ts::stripFrontmatter
+  - src/lib/stores/settings.ts::ReaderSettings
+  - src/lib/stores/settings.ts::loadSettings
+implements:
+  components:
+  - src/lib/components/AILookupSettings.svelte
+  - src/lib/components/AboutDialog.svelte
+  - src/lib/components/CodeMirrorEditor.svelte
+  - src/lib/components/CustomPromptModal.svelte
+  - src/lib/components/DropZone.svelte
+  - src/lib/components/Editor.svelte
+  - src/lib/components/EmptyState.svelte
+  - src/lib/components/FrontmatterBar.svelte
+  - src/lib/components/ImageLightbox.svelte
+  - src/lib/components/LanguageDialog.svelte
+  - src/lib/components/MarkdownRenderer.svelte
+  - src/lib/components/OpenDialog.svelte
+  - src/lib/components/PanelResizer.svelte
+  - src/lib/components/PasteModal.svelte
+  - src/lib/components/PresentationView.svelte
+  - src/lib/components/ProgressBar.svelte
+  - src/lib/components/ReaderControls.svelte
+  - src/lib/components/ScrollToTop.svelte
+  - src/lib/components/SearchOverlay.svelte
+  - src/lib/components/SettingsDialog.svelte
+  - src/lib/components/StatusBar.svelte
+  - src/lib/components/TabBar.svelte
+  - src/lib/components/TableOfContents.svelte
+  - src/lib/components/Toast.svelte
+  - src/lib/components/Toolbar.svelte
+  - src/lib/components/UpdateBanner.svelte
+  - src/lib/components/UpdateToast.svelte
+  editor:
+  - src/lib/editor/cm6.ts
+  - src/lib/editor/search-bridge.ts
+  - src/lib/editor/sessions.ts
+  i18n:
+  - src/lib/i18n/index.ts
+  - src/lib/i18n/locales/de.json
+  - src/lib/i18n/locales/en.json
+  - src/lib/i18n/locales/es.json
+  - src/lib/i18n/locales/fr.json
+  - src/lib/i18n/locales/zh-CN.json
+  - src/lib/i18n/types.ts
+  quicklook:
+  - quicklook/Info.plist
+  - quicklook/MDHeroQuickLook.entitlements
+  - quicklook/Preview.swift
+  - quicklook/README.md
+  - quicklook/build-appex.sh
+  renderer:
+  - src/lib/renderer/mermaid-sanitize.ts
+  - src/lib/renderer/options.ts
+  - src/lib/renderer/pipeline.ts
+  - src/lib/renderer/slides.ts
+  routes:
+  - src/routes/+layout.svelte
+  - src/routes/+layout.ts
+  - src/routes/+page.svelte
+  scripts:
+  - scripts/build-quicklook.mjs
+  src-tauri:
+  - src-tauri/.gitignore
+  - src-tauri/Cargo.toml
+  - src-tauri/Info.plist
+  - src-tauri/build.rs
+  - src-tauri/capabilities/default.json
+  - src-tauri/capabilities/desktop.json
+  - src-tauri/icons/android/mipmap-anydpi-v26/ic_launcher.xml
+  - src-tauri/icons/android/values/ic_launcher_background.xml
+  - src-tauri/src/commands.rs
+  - src-tauri/src/lib.rs
+  - src-tauri/src/main.rs
+  - src-tauri/src/menu.rs
+  - src-tauri/src/single_window.rs
+  - src-tauri/src/watcher.rs
+  - src-tauri/tauri.conf.json
+  - src-tauri/tauri.quicklook.conf.json
+  - src-tauri/tauri.release.conf.json
+  - src-tauri/tests/menu_window.rs
+  stores:
+  - src/lib/stores/aiLookup.ts
+  - src/lib/stores/autoUpdate.ts
+  - src/lib/stores/document.ts
+  - src/lib/stores/pinned.ts
+  - src/lib/stores/readingProgress.ts
+  - src/lib/stores/recents.ts
+  - src/lib/stores/search.ts
+  - src/lib/stores/settings.ts
+  - src/lib/stores/tabs.ts
+  - src/lib/stores/theme.ts
+  - src/lib/stores/toast.ts
+  - src/lib/stores/toc.ts
+  - src/lib/stores/updater.ts
+  tauri:
+  - src/lib/tauri/files.ts
+  - src/lib/tauri/session.ts
+  - src/lib/tauri/watcher.ts
+  tests:
+  - src-tauri/tests/menu_window.rs
+  tests-2:
+  - tests/fixtures/complete-test.md
+  - tests/fixtures/rtl-test/multi-lang.md
+  - tests/fixtures/sample.md
+  - tests/fixtures/scroll-sync-wrap.md
+  - tests/unit/allow-assets.test.ts
+  - tests/unit/code-block-wrap.test.ts
+  - tests/unit/copy-file-name.test.ts
+  - tests/unit/delayed-call.test.ts
+  - tests/unit/dompurify-pin.test.ts
+  - tests/unit/editor-per-tab.test.ts
+  - tests/unit/hljs-dark-coverage.test.ts
+  - tests/unit/i18n.test.ts
+  - tests/unit/line-breaks.test.ts
+  - tests/unit/line-gutter.test.ts
+  - tests/unit/line-patch.test.ts
+  - tests/unit/markdown-highlight-budget.test.ts
+  - tests/unit/markdown-highlight-escape.test.ts
+  - tests/unit/markdown-highlight.test.ts
+  - tests/unit/opener-capability.test.ts
+  - tests/unit/path.test.ts
+  - tests/unit/plaintext-highlight.test.ts
+  - tests/unit/platform.test.ts
+  - tests/unit/quicklook-bundle.test.ts
+  - tests/unit/reload-file.test.ts
+  - tests/unit/rtl-direction.test.ts
+  - tests/unit/session-restore.test.ts
+  - tests/unit/settings-booleans.test.ts
+  - tests/unit/side-tabs.test.ts
+  - tests/unit/slides.test.ts
+  - tests/unit/split-sync.test.ts
+  - tests/unit/tabs-disk-changed.test.ts
+  - tests/unit/tabs-session.test.ts
+  - tests/unit/text-search.test.ts
+  - tests/unit/toc-width.test.ts
+  - tests/unit/unsaved-prompt.test.ts
+  - tests/unit/update-check.test.ts
+  - tests/unit/utf8-bom.test.ts
+  - tests/unit/version-sync.test.ts
+  - tests/unit/watcher.test.ts
+  - tests/unit/wheel-zoom.test.ts
+  types:
+  - src/types/markdown-it-plugins.d.ts
+  unit:
+  - tests/unit/allow-assets.test.ts
+  - tests/unit/code-block-wrap.test.ts
+  - tests/unit/copy-file-name.test.ts
+  - tests/unit/delayed-call.test.ts
+  - tests/unit/dompurify-pin.test.ts
+  - tests/unit/editor-per-tab.test.ts
+  - tests/unit/hljs-dark-coverage.test.ts
+  - tests/unit/i18n.test.ts
+  - tests/unit/line-breaks.test.ts
+  - tests/unit/line-gutter.test.ts
+  - tests/unit/line-patch.test.ts
+  - tests/unit/markdown-highlight-budget.test.ts
+  - tests/unit/markdown-highlight-escape.test.ts
+  - tests/unit/markdown-highlight.test.ts
+  - tests/unit/opener-capability.test.ts
+  - tests/unit/path.test.ts
+  - tests/unit/plaintext-highlight.test.ts
+  - tests/unit/platform.test.ts
+  - tests/unit/quicklook-bundle.test.ts
+  - tests/unit/reload-file.test.ts
+  - tests/unit/rtl-direction.test.ts
+  - tests/unit/session-restore.test.ts
+  - tests/unit/settings-booleans.test.ts
+  - tests/unit/side-tabs.test.ts
+  - tests/unit/slides.test.ts
+  - tests/unit/split-sync.test.ts
+  - tests/unit/tabs-disk-changed.test.ts
+  - tests/unit/tabs-session.test.ts
+  - tests/unit/text-search.test.ts
+  - tests/unit/toc-width.test.ts
+  - tests/unit/unsaved-prompt.test.ts
+  - tests/unit/update-check.test.ts
+  - tests/unit/utf8-bom.test.ts
+  - tests/unit/version-sync.test.ts
+  - tests/unit/watcher.test.ts
+  - tests/unit/wheel-zoom.test.ts
+  utils:
+  - src/lib/utils/clipboard.ts
+  - src/lib/utils/delayed-call.ts
+  - src/lib/utils/layout.ts
+  - src/lib/utils/line-gutter.ts
+  - src/lib/utils/line-patch.ts
+  - src/lib/utils/llm.ts
+  - src/lib/utils/markdown-highlight.ts
+  - src/lib/utils/path.ts
+  - src/lib/utils/platform.ts
+  - src/lib/utils/scroll-sync.ts
+  - src/lib/utils/split-sync.ts
+  - src/lib/utils/text-search.ts
+  - src/lib/utils/unsaved-prompt.ts
+  - src/lib/utils/url.ts
+  - src/lib/utils/wheel-zoom.ts
+checks:
+- id: afwe-verify
+  title: constraints and active guardrails
+  trust: deterministic
+  authored_by: afwe
+  passed: true
+  blocking: true
+- id: project-tests
+  title: pnpm test && pnpm check
+  trust: deterministic
+  authored_by: human
+  passed: true
+  blocking: true
+  ran_against: working-tree
+strength: deterministic
+confidence: 1.0
+confidence_parts:
+  clarity: 1.0
+  mapping: 1.0
+  pins: 1.0
+  verification: 1.0
+gate:
+  decision: ready
+  reasons:
+  - 'PARTIAL_LOSS: components no longer realised by src/lib/components/AuthorshipPromptModal.svelte, src/lib/components/PasteAsWidget.svelte'
+  - 'PARTIAL_LOSS: stores no longer realised by src/lib/stores/authorship.ts'
+  - 'PARTIAL_LOSS: tests-2 no longer realised by tests/unit/authorship.test.ts'
+  - 'PARTIAL_LOSS: unit no longer realised by tests/unit/authorship.test.ts'
+  - '[EXPLORE MODE UNLOCKED] ORPHANED_MODULE: `src/lib/authorship/clipboard.ts` lost all incoming imports and has become dead code — wire it in, or declare it in `turn assume` with action `remove` or `replace`'
+  - '[EXPLORE MODE UNLOCKED] ORPHANED_MODULE: `src/lib/authorship/parser.ts` lost all incoming imports and has become dead code — wire it in, or declare it in `turn assume` with action `remove` or `replace`'
+  - '[EXPLORE MODE UNLOCKED] ORPHANED_MODULE: `src/lib/authorship/types.ts` lost all incoming imports and has become dead code — wire it in, or declare it in `turn assume` with action `remove` or `replace`'
+  - '[EXPLORE MODE UNLOCKED] ORPHANED_MODULE: `src/lib/editor/cm6-authorship.ts` lost all incoming imports and has become dead code — wire it in, or declare it in `turn assume` with action `remove` or `replace`'
+  - '[EXPLORE MODE UNLOCKED] ORPHANED_MODULE: `src/lib/stores/authorship.ts` lost all incoming imports and has become dead code — wire it in, or declare it in `turn assume` with action `remove` or `replace`'
+  - '[EXPLORE MODE UNLOCKED] ORPHANED_MODULE: `src/lib/utils/llm.ts` lost all incoming imports and has become dead code — wire it in, or declare it in `turn assume` with action `remove` or `replace`'
+footer_shown: false
+summary: 'feat(authorship): add dual-level authorship, auto AI clipboard detection, and Paste As widget'
+turn_token: afwe_tok_bde23ef4277e1599b2ddd2beb43f461c
+post_hashes:
+  .afwe/afwe.yaml: 06ecaf9646f5dbdb
+  .afwe/blueprint/blueprint.yaml: 1b6c04be5e93f17e
+  .afwe/intents/implement-authorship.yaml: a3679e061c3736e1
+  .github/FUNDING.yml: be9f683a20a358ca
+  .github/ISSUE_TEMPLATE/bug_report.yml: b167f2dbddc7a08b
+  .github/ISSUE_TEMPLATE/config.yml: fc648932d7557851
+  .github/ISSUE_TEMPLATE/feature_request.yml: d8ae9d268633fa59
+  .github/pull_request_template.md: 0419817c6bd91a55
+  .github/workflows/afwe-gate.yml: 69181d101a8f6334
+  .github/workflows/build.yml: 26e6d5f00cf33cdc
+  .gitignore: 6077615810f4144e
+  .vscode/extensions.json: f3ee019855acff64
+  .vscode/settings.json: dd240e24f82f89ca
+  src-tauri/.gitignore: 2aefdfb7c2883035
+  src/lib/authorship/clipboard.ts: 6a0fab1ba6bec3d8
+  src/lib/authorship/index.ts: b0f15fc8856374dc
+  src/lib/authorship/parser.ts: b7768f0a9c4110f5
+  src/lib/authorship/types.ts: fb2acdd0d9bcb1e7
+  src/lib/components/AuthorshipPromptModal.svelte: ef1b4803129db6cf
+  src/lib/components/CodeMirrorEditor.svelte: d8904ee2fff5086e
+  src/lib/components/PasteAsWidget.svelte: 3abdee50a1da55fc
+  src/lib/components/SettingsDialog.svelte: 31938d572ec27d8a
+  src/lib/components/StatusBar.svelte: e694c2aed9fe2e9a
+  src/lib/editor/cm6-authorship.ts: f674a9c1e2e0dbd9
+  src/lib/editor/cm6.ts: 457bba07a45430ca
+  src/lib/i18n/locales/de.json: 860c567133d07b21
+  src/lib/i18n/locales/en.json: ab75b4873bfe6466
+  src/lib/i18n/locales/es.json: 17d2c995ab50ebb4
+  src/lib/i18n/locales/fr.json: c50f7c17ae2a1ec1
+  src/lib/i18n/locales/zh-CN.json: 421a13ca38f5e170
+  src/lib/renderer/pipeline.ts: 2f191bcc5281c562
+  src/lib/stores/authorship.ts: ccde1c897bb629eb
+  src/lib/stores/settings.ts: 3ec93f7c44060fb6
+  src/lib/tauri/files.ts: 53f8c7bba51be0f7
+  src/routes/+page.svelte: ab0c73c838746fc3
+  tests/unit/authorship.test.ts: 779549fc4fb6be92
+  tests/unit/markdown-highlight-budget.test.ts: 843dd27f163fa1a7
+session_id: sess-4d1911

@@ -52,7 +52,7 @@ intents:
   - tests/unit/version-sync.test.ts
   title: Fix Windows baseline tests
   statement: 'Make the baseline test suite pass on Windows without changing behavior: remove the import-breaking shebang and accept CRLF in Cargo.lock version detection.'
-status: ready
+status: committed
 touched:
   nodes:
   - src-tauri
@@ -281,5 +281,22 @@ gate:
   decision: ready
 footer_shown: false
 summary: Bootstrap AFWE ReBorn intent layer; fix Windows baseline test import and CRLF version detection.
+committed_at: 2026-11-14T11:59:10Z
+commit_sha: e07c9011cc5d04b8f947e488b69144a01d186f11
 turn_token: afwe_tok_336bf8087067a7a1ce1b808a9d4a0e3c
+post_hashes:
+  .afwe/afwe.yaml: ae17510f54755fdd
+  .afwe/intents/bootstrap-afwe.yaml: 152fddfbcb29f528
+  .afwe/intents/fix-windows-baseline.yaml: f3573963df6acbda
+  .github/FUNDING.yml: be9f683a20a358ca
+  .github/ISSUE_TEMPLATE/bug_report.yml: b167f2dbddc7a08b
+  .github/ISSUE_TEMPLATE/config.yml: fc648932d7557851
+  .github/ISSUE_TEMPLATE/feature_request.yml: d8ae9d268633fa59
+  .github/pull_request_template.md: 0419817c6bd91a55
+  .github/workflows/afwe-gate.yml: 69181d101a8f6334
+  .github/workflows/build.yml: 26e6d5f00cf33cdc
+  .gitignore: 6077615810f4144e
+  .vscode/extensions.json: f3ee019855acff64
+  .vscode/settings.json: dd240e24f82f89ca
+  src-tauri/.gitignore: 2aefdfb7c2883035
 session_id: sess-f349be

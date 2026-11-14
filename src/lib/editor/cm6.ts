@@ -1,3 +1,4 @@
+import { authorshipCompartment, authorshipExtension } from "./cm6-authorship";
 import { Compartment, EditorState } from "@codemirror/state";
 import {
   EditorView,
@@ -211,6 +212,7 @@ export function createEditorState(
       lineNumbersCompartment.of(lineNumberExtension(showLineNumbers)),
       appearanceCompartment.of(appearanceExtension(dark, syntax)),
       fontCompartment.of(fontExtension(fontSize, lineHeight)),
+      authorshipCompartment.of(authorshipExtension()),
       markdown(),
       bracketMatching(),
       indentOnInput(),

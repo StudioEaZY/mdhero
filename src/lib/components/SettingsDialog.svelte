@@ -197,6 +197,68 @@
           </label>
         </section>
 
+                <section class="settings-section">
+          <h3 class="section-title">{$t('authorship.sectionTitle')}</h3>
+          <p class="section-hint">{$t('authorship.sectionHint')}</p>
+
+          <label class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">{$t('authorship.enabled')}</span>
+              <span class="setting-hint">{$t('authorship.enabledHint')}</span>
+            </div>
+            <input
+              type="checkbox"
+              checked={$settings.authorshipEnabled}
+              onchange={(e) => settings.update((s) => ({ ...s, authorshipEnabled: e.currentTarget.checked }))}
+              class="setting-switch"
+            />
+          </label>
+
+          {#if $settings.authorshipEnabled}
+            <label class="setting-row">
+              <div class="setting-text">
+                <span class="setting-label">{$t('authorship.defaultPasteAs')}</span>
+                <span class="setting-hint">{$t('authorship.defaultPasteAsHint')}</span>
+              </div>
+              <select
+                class="setting-select"
+                value={$settings.authorshipDefaultPasteAs}
+                onchange={(e) => settings.update((s) => ({ ...s, authorshipDefaultPasteAs: e.currentTarget.value as any }))}
+              >
+                <option value="ai">{$t('authorship.pasteAsAi')}</option>
+                <option value="you">{$t('authorship.pasteAsYou')}</option>
+                <option value="other">{$t('authorship.pasteAsOther')}</option>
+              </select>
+            </label>
+
+            <label class="setting-row">
+              <div class="setting-text">
+                <span class="setting-label">{$t('authorship.showPasteAs')}</span>
+                <span class="setting-hint">{$t('authorship.showPasteAsHint')}</span>
+              </div>
+              <input
+                type="checkbox"
+                checked={$settings.authorshipShowPasteAsWidget}
+                onchange={(e) => settings.update((s) => ({ ...s, authorshipShowPasteAsWidget: e.currentTarget.checked }))}
+                class="setting-switch"
+              />
+            </label>
+
+            <label class="setting-row">
+              <div class="setting-text">
+                <span class="setting-label">{$t('authorship.highlightInEditor')}</span>
+                <span class="setting-hint">{$t('authorship.highlightInEditorHint')}</span>
+              </div>
+              <input
+                type="checkbox"
+                checked={$settings.authorshipHighlightInEditor}
+                onchange={(e) => settings.update((s) => ({ ...s, authorshipHighlightInEditor: e.currentTarget.checked }))}
+                class="setting-switch"
+              />
+            </label>
+          {/if}
+        </section>
+
         <section class="settings-section">
           <h3 class="section-title">{$t('settings.aiLookup')}</h3>
           <p class="section-hint">{$t('settings.aiLookupHint')}</p>

@@ -1,0 +1,27 @@
+id: implement-authorship
+title: Implement dual-level Authorship and Paste As
+statement: Implement note-wide and span-level Authorship tracking with automatic AI detection from clipboard metadata, Paste As quick toggle widget, opt-in prompt modal, outside software edit detection, and open Markdown annotations.
+status: active
+origin: llm:gemini
+attaches:
+  nodes:
+  - authorship
+  - editor
+  files:
+  - src/lib/authorship
+  - src/lib/components/AuthorshipPromptModal.svelte
+  - src/lib/components/PasteAsWidget.svelte
+  - src/lib/editor/cm6-authorship.ts
+  - src/lib/stores/authorship.ts
+  - src/lib/stores/settings.ts
+  - src/lib/components/SettingsDialog.svelte
+  - src/lib/components/StatusBar.svelte
+from_turns:
+- t0007
+history:
+- turn: t0007
+  ts: 2026-11-14T11:59:47Z
+  statement: Implement note-wide and span-level Authorship tracking with automatic AI detection from clipboard metadata, Paste As quick toggle widget, opt-in prompt modal, outside software edit detection, and open Markdown annotations.
+created: 2026-11-14T11:59:47Z
+updated: 2026-11-14T11:59:47Z
+task: task-t0007
