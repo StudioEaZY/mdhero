@@ -2,7 +2,7 @@ import { initTabAuthorship } from "../stores/authorship";
 import { invoke } from "@tauri-apps/api/core";
 import { get } from "svelte/store";
 import { open, save } from "@tauri-apps/plugin-dialog";
-import { getCurrentWindow } from "@tauri-apps/api/window";
+import { setWindowTitle } from "../utils/platform";
 import { document } from "../stores/document";
 import { tabStore } from "../stores/tabs";
 import { renderFull } from "../renderer/pipeline";
@@ -62,7 +62,7 @@ export async function openFile(path: string): Promise<void> {
     });
 
     addRecentFile(absolutePath, fileName);
-    getCurrentWindow().setTitle(`${fileName} — MDHero`).catch(() => {});
+    setWindowTitle(`${fileName} — MDHero`);
   } catch (err) {
     document.set({
       filePath: absolutePath,
@@ -118,7 +118,7 @@ export async function saveAsNewDocument(tabId: string, content: string): Promise
   tabStore.rebindPath(tabId, chosen, fileName);
   watchFile(chosen);
   addRecentFile(chosen, fileName);
-  getCurrentWindow().setTitle(`${fileName} — MDHero`).catch(() => {});
+  setWindowTitle(`${fileName} — MDHero`);
   return chosen;
 }
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { openFile } from "../tauri/files";
-  import { getCurrentWebview } from "@tauri-apps/api/webview";
+  import { isTauri } from "$lib/utils/platform";
   import { onMount } from "svelte";
   import { t } from "$lib/i18n";
 
@@ -9,27 +9,32 @@
   onMount(() => {
     let unlisten: (() => void) | undefined;
 
-    getCurrentWebview()
-      .onDragDropEvent((event) => {
-        if (event.payload.type === "over") {
-          if ((window as any).__mdhero_tab_dragging) return;
-          isDragging = true;
-        } else if (event.payload.type === "drop") {
-          isDragging = false;
-          const files = event.payload.paths;
-          if (files.length > 0) {
-            const file = files[0];
-            if (file.match(/\.(md|markdown|mdown|mkd|txt)$/i)) {
-              openFile(file);
+    if (isTauri()) {
+      import("@tauri-apps/api/webview").then(({ getCurrentWebview }) => {
+        getCurrentWebview()
+          .onDragDropEvent((event) => {
+            if (event.payload.type === "over") {
+              if ((window as any).__mdhero_tab_dragging) return;
+              isDragging = true;
+            } else if (event.payload.type === "drop") {
+              isDragging = false;
+              const files = event.payload.paths;
+              if (files.length > 0) {
+                const file = files[0];
+                if (file.match(/\.(md|markdown|mdown|mkd|txt)$/i)) {
+                  openFile(file);
+                }
+              }
+            } else if (event.payload.type === "leave") {
+              isDragging = false;
             }
-          }
-        } else if (event.payload.type === "leave") {
-          isDragging = false;
-        }
-      })
-      .then((fn) => {
-        unlisten = fn;
-      });
+          })
+          .then((fn) => {
+            unlisten = fn;
+          })
+          .catch(() => {});
+      }).catch(() => {});
+    }
 
     return () => {
       unlisten?.();

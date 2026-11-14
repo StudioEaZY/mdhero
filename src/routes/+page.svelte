@@ -23,7 +23,7 @@
   import { restoreSession } from "$lib/tauri/session";
   import { attachSplitSync, type SplitSync } from "$lib/utils/split-sync";
   import { themeMode, cycleTheme } from "$lib/stores/theme";
-  import { getCurrentWindow } from "@tauri-apps/api/window";
+  import { setWindowTitle } from "$lib/utils/platform";
   import { invoke } from "@tauri-apps/api/core";
   import { tocVisible, tocEntries } from "$lib/stores/toc";
   import Toolbar from "$lib/components/Toolbar.svelte";
@@ -1152,7 +1152,7 @@
       });
       tocVisible.set(false);
       tocEntries.set([]);
-      getCurrentWindow().setTitle("MDHero").catch(() => {});
+      setWindowTitle("MDHero");
       return;
     }
 
@@ -1174,7 +1174,7 @@
     // mid-edit (#44). Runs once per tab switch, so an explicit exit (Esc) sticks.
     presenting = isMarpDoc(tab.frontmatter) && get(settings).autoPresentMarp && !tab.isEditing;
 
-    getCurrentWindow().setTitle(`${tab.fileName} — MDHero`).catch(() => {});
+    setWindowTitle(`${tab.fileName} — MDHero`);
 
     const savedScroll = tab.scrollTop;
     tick().then(() => {

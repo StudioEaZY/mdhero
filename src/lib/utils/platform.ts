@@ -27,3 +27,28 @@ export function modifierKeyLabel(
 
 /** The label for this session's platform, resolved once at module load. */
 export const MOD = modifierKeyLabel();
+
+/**
+ * Whether the code is running inside a native Tauri webview.
+ */
+export function isTauri(): boolean {
+  return typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;
+}
+
+/**
+ * Safely sets the window title across both native Tauri and web/browser preview environments.
+ */
+export function setWindowTitle(title: string): void {
+  if (typeof document !== "undefined") {
+    document.title = title;
+  }
+  if (isTauri()) {
+    try {
+      import("@tauri-apps/api/window")
+        .then(({ getCurrentWindow }) => {
+          getCurrentWindow().setTitle(title).catch(() => {});
+        })
+        .catch(() => {});
+    } catch {}
+  }
+}
